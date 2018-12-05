@@ -4,18 +4,11 @@ Finding the minute between 0.00 and 1.00 when a guard
 is most likely to be asleep.
 
 """
-
+from collections import defaultdict
 from datetime import datetime
 
 from operator import itemgetter
 import re
-
-import pandas as pd
-
-# First, let's sort out the data
-with open("input.txt") as f:
-    records = f.readlines()
-
 
 def clean_record(record):
     """Takes one line of input and splits into a date and a message."""
@@ -37,16 +30,29 @@ def find_guard_id(msg):
     """ Return the guard which is on shift. """
     return re.search(r"\d+", msg).group(0)
 
-def process_message(msg):
-    """ Return True if asleep, False if awake, and guard id if shift."""
+def process_message(msg, guard_id):
+    """ Return True if asleep, False if awake, and new guard id if shift."""
     if msg == "falls asleep":
-        return True
-    elif msg == "wakes up":
-        return False
-    else:
-        return find_guard_id(msg)
+        return guard_id, True
+    if msg == "wakes up":
+        return guard_id, False
 
-chronological_records = sort_records(records)
+    return find_guard_id(msg), False
 
+
+# First, let's sort out the data
+with open("input.txt") as f:
+    chronological_records = sort_records(f.readlines())
+
+stats = defaultdict(lambda: defaultdict(int))
+guard = None
+d_old_min = 0
+is_old_asleep = False
 for d, msg in chronological_records:
-    print(d, "\t", msg, "\t", process_message(msg))
+    guard, is_asleep = process_message(msg, guard)
+    stats[guard][d.minute] += is_asleep
+
+[print(c) for c in chronological_records]
+for guard, mins in stats.items():
+    print()
+    print(guard, ":\n\t", mins)
