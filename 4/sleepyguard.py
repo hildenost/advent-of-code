@@ -39,20 +39,59 @@ def process_message(msg, guard_id):
 
     return find_guard_id(msg), False
 
+def interpret_records(records):
+    """ Interpret the chronologically sorted records.
 
-# First, let's sort out the data
-with open("input.txt") as f:
-    chronological_records = sort_records(f.readlines())
+    Return a statistics dictionary.
 
-stats = defaultdict(lambda: defaultdict(int))
-guard = None
-d_old_min = 0
-is_old_asleep = False
-for d, msg in chronological_records:
-    guard, is_asleep = process_message(msg, guard)
-    stats[guard][d.minute] += is_asleep
+    """
 
-[print(c) for c in chronological_records]
-for guard, mins in stats.items():
-    print()
-    print(guard, ":\n\t", mins)
+    stats = defaultdict(lambda: defaultdict(int))
+
+    guard = None
+    prev_minute = 0
+    prev_asleep = False
+    for date, message in records:
+        guard, is_asleep = process_message(message, guard)
+
+        for minute in range(prev_minute, date.minute):
+            stats[guard][minute] += prev_asleep
+
+        prev_minute, prev_asleep = date.minute, is_asleep
+
+    return stats
+
+def process_input():
+    """ Clean, sort, and count the sleeping minutes by guard id.
+
+    First, let's sort out the data. Then a count of every time
+    a given guard is asleep is stored.
+
+    stats is a nested defaultdict that holds the statistics of every
+    guards' sleepy times.
+
+    """
+
+    with open("input.txt") as fyle:
+        chronological_records = sort_records(fyle.readlines())
+
+    return interpret_records(chronological_records)
+
+
+def sleepiest_guard(stats):
+    """ Finding the guard that sleeps the most minutes. """
+    sleep_sum = {guard: sum(mins.values()) for guard, mins in stats.items()}
+    return max(sleep_sum.keys(), key=(lambda k: sleep_sum[k]))
+
+def sleepiest_minute(stats):
+    """ Finding the minute where a given guard sleeps most often. """
+    guard = stats[sleepiest_guard(stats)]
+    return int(max(guard.keys(), key=(lambda k: guard[k])))
+
+def guard_by_minute():
+    """ Finding the sleepiest guard id multiplied by the minute he's most likely asleep. """
+    stats = process_input()
+    return int(sleepiest_guard(stats))*sleepiest_minute(stats)
+
+if __name__ == "__main__":
+    print(guard_by_minute())
