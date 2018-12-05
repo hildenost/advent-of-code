@@ -88,10 +88,26 @@ def sleepiest_minute(stats):
     guard = stats[sleepiest_guard(stats)]
     return int(max(guard.keys(), key=(lambda k: guard[k])))
 
-def guard_by_minute():
+def guard_by_frequency(stats):
+    """ Finding the guard who is most frequently asleep on the same minute."""
+    max_count = 0
+    max_minute = 0
+    max_guard = 0
+    for guard, mins in stats.items():
+        local_minute = max(mins.keys(), key=(lambda k, m=mins: m[k]))
+
+        if mins[local_minute] > max_count:
+            max_count = mins[local_minute]
+            max_minute = local_minute
+            max_guard = guard
+
+    return int(max_guard)*max_minute
+
+def guard_by_minute(stats):
     """ Finding the sleepiest guard id multiplied by the minute he's most likely asleep. """
-    stats = process_input()
     return int(sleepiest_guard(stats))*sleepiest_minute(stats)
 
 if __name__ == "__main__":
-    print(guard_by_minute())
+    INPUT = process_input()
+    print("Strategy 1:\t", guard_by_minute(INPUT))
+    print("Strategy 2:\t", guard_by_frequency(INPUT))
