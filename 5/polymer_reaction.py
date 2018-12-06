@@ -19,6 +19,19 @@ def polymer_reaction(polymer):
             i -= 1
         else:
             i += 1
-    return polymer
+    return len(polymer)
 
-print(len(polymer_reaction(sys.stdin.read().strip())))
+def length_improved(letter, polymer):
+    """ Returns the length of improved polymer. """
+    polymer = polymer.replace(letter, "")
+    polymer = polymer.replace(letter.upper(), "")
+    return polymer_reaction(polymer)
+
+def improved_reaction(polymer):
+    """ Finds the minimum length polymer after removing one type. """
+    return min((length_improved(letter, polymer)
+                for letter in "abcdefghijklmnopqrstuvwxyz"))
+
+INPUT = sys.stdin.read().strip()
+print(polymer_reaction(INPUT))
+print(improved_reaction(INPUT))
