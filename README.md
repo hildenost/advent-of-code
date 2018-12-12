@@ -11,8 +11,7 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |---|:----:|:---:|
 |✔️ [Day 1: Chronal Calibration](https://github.com/hildenost/advent-of-code-2018/tree/master/1)  | ⭐️ | ⭐️ |
 |✔️[Day 2: Inventory Management System](https://github.com/hildenost/advent-of-code-2018/tree/master/2)  | ⭐️ | ⭐️|
-| [Day 3: No Matter How You Slice It](https://github.com/hildenost/advent-of-code-2018/tree/master/3)   |  |  |
-|✔️ [Day 4: Repose Record](https://github.com/hildenost/advent-of-code-2018/tree/master/4)   | ⭐️ | ⭐️ |
+|✔️[Day 3: No Matter How You Slice It](https://github.com/hildenost/advent-of-code-2018/tree/master/3)   | ⭐️ |⭐️  |
 |✔️ [Day 4: Repose Record](https://github.com/hildenost/advent-of-code-2018/tree/master/4)   | ⭐️ | ⭐️ |
 |✔️ [Day 5: Alchemical Reduction](https://github.com/hildenost/advent-of-code-2018/tree/master/5)   | ⭐️ | ⭐️ |
 | [Day 6: Chronal Coordinates](https://github.com/hildenost/advent-of-code-2018/tree/master/6)   |  |  |
