@@ -16,3 +16,4 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 5: Alchemical Reduction](https://github.com/hildenost/advent-of-code-2018/tree/master/5)   | ⭐️ | ⭐️ |
 |✔️ [Day 6: Chronal Coordinates](https://github.com/hildenost/advent-of-code-2018/tree/master/6)   | ⭐️ |⭐️  |
 |✔️ [Day 7: The Sum of Its Parts](https://github.com/hildenost/advent-of-code-2018/tree/master/7)   | ⭐️ | ⭐️|
+|✔️ [Day 8: Memory Maneuver](https://github.com/hildenost/advent-of-code-2018/tree/master/7)   | ⭐️ | ⭐️|
