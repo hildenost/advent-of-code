@@ -9,9 +9,9 @@ def nonincreasing(numbers):
 total = sum(
     1
     for password in range(min_pwd, max_pwd+1)
-    if 2 in Counter(str(password)).values() # PART 2
-    #if len(set(str(password))) < 6 # PART 1
-    and nonincreasing(str(password))
+    if nonincreasing(str(password))
+    and 2 in Counter(str(password)).values() # PART 2
+    #and len(set(str(password))) < 6 # PART 1
 )
 
 #total = 0
