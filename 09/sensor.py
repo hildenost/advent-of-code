@@ -1,0 +1,2 @@
+from intcode import run
+
