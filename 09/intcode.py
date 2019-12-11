@@ -2,7 +2,7 @@ from input_prog import input_program
 
 
 def get_pointer(program, p, mode, r):
-    print("Finding pointer ", p, program[p])
+    # print("Finding pointer ", p, " or ", program[p], " or ", r + program[p])
     return p if mode == 1 else r + program[p] if mode == 2 else program[p]
 
 
@@ -24,18 +24,18 @@ def run(program, input_value=0):
     i = 0
     while True:
         i += 1
-        if i > 10:
-            break
+        #        if i > 10:
+        #            break
         instruction = str(program[p])
-        print("INSTRUCTION ", instruction)
-        print(program)
+        #        print("INSTRUCTION ", instruction)
+        #        print(program)
 
         third = 0 if len(instruction) < 5 else int(instruction[0])
         second = 0 if len(instruction) < 4 else int(instruction[-4])
         first = 0 if len(instruction) < 3 else int(instruction[-3])
 
         opcode = int(instruction[-2:])
-        print("\t OPCODE ", opcode, "\t MODES ", first, second, third)
+        # print("\t OPCODE ", opcode, "\t MODES ", first, second, third)
 
         if opcode == 99:
             print("EXITING")
@@ -58,6 +58,7 @@ def run(program, input_value=0):
         )
 
         if opcode in {1, 2, 3, 7, 8}:
+            # print("POINTER was ", pointer, " and params: ", a, b)
             program[pointer], p = OPCODES[opcode](a, b, p)
 
         elif opcode in {5, 6}:
@@ -68,7 +69,7 @@ def run(program, input_value=0):
             p += 2
 
         elif opcode == 9:
-            print("GONNA ADD ", a, " to ", r)
+            # print("GONNA ADD ", a, " to ", r)
             r += a
             p += 2
 
@@ -78,7 +79,3 @@ def run(program, input_value=0):
 
     return program
 
-
-test_1 = [109, 1, 204, -1, 1001, 100, 1, 100, 1008, 100, 16, 101, 1006, 101, 0, 99]
-
-run(test_1)
