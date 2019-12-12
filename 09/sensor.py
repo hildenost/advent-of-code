@@ -14,6 +14,11 @@ run(test)
 from input_prog import input_program
 
 part1_prog = [i for i in input_program] + [0] * 100
-run(part1_prog, 1)
+running = run(part1_prog)
+next(running)
+print(running.send(1))
+
 part2_prog = [i for i in input_program] + [0] * 1000
-run(part2_prog, 2)
+running = run(part2_prog)
+next(running)
+print(running.send(2))
