@@ -10,5 +10,5 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 | Day | Part 1 | Part 2 |
 |---|:----:|:---:|
 |✔️ Day 1: Report Repair | ⭐️ | ⭐️ |
-| Day 2: Password Philosophy  | ⭐️ | ⭐️|
+|✔️ Day 2: Password Philosophy   | ⭐️ | ⭐️ |
 
