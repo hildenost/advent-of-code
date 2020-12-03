@@ -11,4 +11,5 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |---|:----:|:---:|
 |✔️ Day 1: Report Repair | ⭐️ | ⭐️ |
 |✔️ Day 2: Password Philosophy   | ⭐️ | ⭐️ |
+|✔️ Day 3: Toboggan Trajectory   | ⭐️ | ⭐️ |
 
