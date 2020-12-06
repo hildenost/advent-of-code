@@ -13,4 +13,5 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ Day 2: Password Philosophy   | ⭐️ | ⭐️ |
 |✔️ Day 3: Toboggan Trajectory   | ⭐️ | ⭐️ |
 |✔️ Day 4: Passport Processing   | ⭐️ | ⭐️ |
+|✔️ Day 5: Binary Boarding   | ⭐️ | ⭐️ |
 
