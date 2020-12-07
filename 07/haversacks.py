@@ -1,4 +1,3 @@
-from collections import defaultdict
 import re
 
 
@@ -12,37 +11,57 @@ vibrant plum bags contain 5 faded blue bags, 6 dotted black bags.
 faded blue bags contain no other bags.
 dotted black bags contain no other bags.
 """
+second_testset = """shiny gold bags contain 2 dark red bags.
+dark red bags contain 2 dark orange bags.
+dark orange bags contain 2 dark yellow bags.
+dark yellow bags contain 2 dark green bags.
+dark green bags contain 2 dark blue bags.
+dark blue bags contain 2 dark violet bags.
+dark violet bags contain no other bags.
+"""
 
 with open("07/input.txt") as f:
     ruleset = f.read()
 
-pattern = re.compile(r"([a-z]+ [a-z]+) bag[s]?")
+pattern = re.compile(r"(?P<number>\d+)?(?: )?(?P<colour>[a-z]+ [a-z]+) bag[s]?")
 
 
 def parse_ruleset(ruleset):
-    rules = defaultdict(set)
+    rules = {}
     for rule in ruleset.splitlines():
-        parent, *children = pattern.findall(rule)
-        rules[parent].update(children)
+        parent, *children = pattern.finditer(rule)
+        rules[parent["colour"]] = {
+            child["colour"]: int(child["number"])
+            if child["number"] is not None
+            else None
+            for child in children
+        }
+
     return rules
 
 
-def search_shiny_gold(visited, graph, bag):
-    if bag not in visited:
-        visited.add(bag)
-        if "shiny gold" in graph[bag]:
-            return True
-        if "no other" in graph[bag]:
-            return False
+def search_shiny_gold(graph, bag):
+    if "shiny gold" in graph[bag]:
+        return True
+    if "no other" in graph[bag]:
+        return False
 
-        return any(
-            search_shiny_gold(visited, graph, children) for children in graph[bag]
-        )
-    return False
+    return any(search_shiny_gold(graph, child) for child in graph[bag])
 
 
-graph = parse_ruleset(test_ruleset)
+def count_bags_in_shiny_gold(graph, bag):
+    if "no other" in graph[bag]:
+        return 0
+    return sum(
+        number + number * count_bags_in_shiny_gold(graph, child)
+        for child, number in graph[bag].items()
+    )
+
+
 graph = parse_ruleset(ruleset)
 
-print(sum(search_shiny_gold(set(), graph, bag) for bag in graph))
+### PART 1
+print(sum(search_shiny_gold(graph, bag) for bag in graph))
 
+### PART 2
+print(count_bags_in_shiny_gold(graph, "shiny gold"))

@@ -15,5 +15,5 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 4: Passport Processing](04)   | ⭐️ | ⭐️ |
 |✔️ [Day 5: Binary Boarding](05)   | ⭐️ | ⭐️ |
 |✔️ [Day 6: Custom Customs](06)   | ⭐️ | ⭐️ |
-|✔️ [Day 7: Handy Haversacks](07)   | ⭐️ | ️ |
+|✔️ [Day 7: Handy Haversacks](07)   | ⭐️ | ️⭐️ |
 
