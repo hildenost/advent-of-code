@@ -12,17 +12,17 @@ def convert_to_binary(string):
     # or 1 (upper half)
     out = string.replace("F", "0").replace("B", "1").replace("R", "1").replace("L", "0")
 
-    # I then convert the binary number to integer, but of course only after
-    # splitting the string to row and columns
-    return int(out[:7], 2), int(out[7:], 2)
-
-
-def get_seat_id(row, column):
-    return row * 8 + column
+    # I then convert the binary number to integer
+    # noticing that the seat id = row * 8 + column,
+    # multiplying by 8 = 2^3 equals shifting the bits 3 spots to the left,
+    # which is handy when our column is defined by 3 bits
+    # In other words, the seat id is found by converting the entire
+    # binary string to an integer
+    return int(out, 2)
 
 
 all_seat_ids = {
-    get_seat_id(*convert_to_binary(boarding_pass)) for boarding_pass in boarding_passes
+    convert_to_binary(boarding_pass) for boarding_pass in boarding_passes
 }
 
 ### PART 1
