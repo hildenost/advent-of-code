@@ -17,4 +17,5 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 6: Custom Customs](06)   | ⭐️ | ⭐️ |
 |✔️ [Day 7: Handy Haversacks](07)   | ⭐️ | ️⭐️ |
 |✔️ [Day 8: Handheld Halting](08)   | ⭐️ | ️⭐️ |
+|✔️ [Day 9: Encoding Error](09)   | ⭐️ | ️⭐️ |
 
