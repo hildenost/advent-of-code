@@ -20,4 +20,5 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 9: Encoding Error](09)   | ⭐️ | ️⭐️ |
 |✔️ [Day 10: Adapter Array](10)   | ⭐️ | ️⭐️ |
 |✔️ [Day 11: Seating System](11)   | ⭐️ | ️⭐️ |
+|✔️ [Day 12: Rain Risk](12)   | ⭐️ | ️⭐️ |
 
