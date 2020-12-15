@@ -23,4 +23,5 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 12: Rain Risk](12)   | ⭐️ | ️⭐️ |
 |✔️ [Day 13: Shuttle Search](13)   | ⭐️ | ️⭐️ |
 |✔️ [Day 14: Docking Data](14)  | ⭐️ | ️⭐️ |
+|✔️ [Day 15: Rambunctious Recitation](15)  | ⭐️ | ️⭐️ |
 
