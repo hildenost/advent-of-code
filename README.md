@@ -27,4 +27,5 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 16: Ticket Translation](16)  | ⭐️ | ️⭐️ |
 |✔️ [Day 17: Conway Cubes](17)  | ⭐️ | ️⭐️ |
 |✔️ [Day 18: Operation Order](18)  | ⭐️ | ️⭐️ |
+|✔️ [Day 19: Monster Messages](19)  | ⭐️ | ️⭐️ |
 
