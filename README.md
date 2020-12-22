@@ -30,3 +30,4 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 19: Monster Messages](19)  | ⭐️ | ️⭐️ |
 |✔️ [Day 20: Jurassic Jigsaw](20)  | ⭐️ | ️⭐️ | 
 |✔️ [Day 21: Allergen Assessment](21)  | ⭐️ | ️⭐️ | 
+|✔️ [Day 22: Crab Combat](22)  | ⭐️ | ️⭐️ | 
