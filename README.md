@@ -32,3 +32,4 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 21: Allergen Assessment](21)  | ⭐️ | ️⭐️ | 
 |✔️ [Day 22: Crab Combat](22)  | ⭐️ | ️⭐️ | 
 |✔️ [Day 23: Crab Cups](23)  | ⭐️ | ️⭐️ | 
+|✔️ [Day 24: Lobby Layout](24)  | ⭐️ | ️⭐️ | 
