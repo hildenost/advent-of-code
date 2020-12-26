@@ -33,3 +33,4 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 22: Crab Combat](22)  | ⭐️ | ️⭐️ | 
 |✔️ [Day 23: Crab Cups](23)  | ⭐️ | ️⭐️ | 
 |✔️ [Day 24: Lobby Layout](24)  | ⭐️ | ️⭐️ | 
+|✔️ [Day 25: Combo Breaker](25)  | ⭐️ | ️⭐️ | 
