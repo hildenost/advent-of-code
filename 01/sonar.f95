@@ -5,7 +5,6 @@ program day01
     integer :: iostat
     integer :: io
     integer :: length = 0
-    integer :: i
 
     ! Problem related variables
     integer, dimension(:), allocatable :: scanning
@@ -25,12 +24,8 @@ program day01
     ! Now we can allocate our scanning array
     allocate(scanning(length))
     ! And finally, we can store the input in the array
-    ! We could do the magic that was the task while looping
-    ! but we want to make this file I/O a module for future use
     rewind(io)
-    do i = 1, length ! Arrays start at 1!!!!! DON'T @ ME
-        read(io, *) scanning(i)
-    end do
+    read(io, *) scanning
     close(io)
 
 
@@ -39,10 +34,9 @@ program day01
     ! The solution can therefore be generalized as a function of
     ! sliding window size k
     do k = 1, 3, 2  ! start, stop, step
-        ! [(statement, i=start, stop(, step))] is an implicit do loop
         ! COUNT is an intrinsic function that counts the number of .TRUE.
         ! elements in a Boolean array
-        write(*, *) count([(scanning(i) > scanning(i-k), i=k+1, size(scanning))])
+        write(*, *) count(scanning(k+1:) > scanning(:length - k))
     end do
 
 end program day01
