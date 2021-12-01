@@ -1,18 +1,16 @@
 program day01
     implicit none
 
+    ! Variables related to file I/O
     integer :: iostat
     integer :: io
-
-    integer, dimension(:), allocatable :: scanning
-    logical, dimension(:), allocatable :: mask
-
-    ! size of sliding window
-    integer :: k = 3
-
     integer :: length = 0
-
     integer :: i
+
+    ! Problem related variables
+    integer, dimension(:), allocatable :: scanning
+    ! size of sliding window
+    integer :: k
 
 
     ! Fortran needs to know how large the array is going to be
@@ -24,12 +22,8 @@ program day01
         if (is_iostat_end(iostat)) exit
         length = length + 1
     end do
-
     ! Now we can allocate our scanning array
     allocate(scanning(length))
-    ! We don't have to allocate the other arrays yet, since
-    ! their size will be known when doing the implicit loops
-
     ! And finally, we can store the input in the array
     ! We could do the magic that was the task while looping
     ! but we want to make this file I/O a module for future use
@@ -39,17 +33,16 @@ program day01
     end do
     close(io)
 
-    ! Part 1
-    mask = [(scanning(i) > scanning(i-1), i=2, size(scanning))]
-    ! COUNT is an intrinsic function that counts the number of .TRUE.
-    ! elements in an array
-    write (*,*) count(mask)
 
-    ! Part 2
-    ! Creating the rolling sum
-    scanning = [(sum(scanning(i-k+1:i)), i=k, size(scanning))]
-
-    mask = [(scanning(i) > scanning(i-1), i=2, size(scanning))]
-    write (*,*) count(mask)
+    ! In part 2, we are comparing whether a + b + c < b + c + d
+    ! which simplifies to comparing a < d 
+    ! The solution can therefore be generalized as a function of
+    ! sliding window size k
+    do k = 1, 3, 2  ! start, stop, step
+        ! [(statement, i=start, stop(, step))] is an implicit do loop
+        ! COUNT is an intrinsic function that counts the number of .TRUE.
+        ! elements in a Boolean array
+        write(*, *) count([(scanning(i) > scanning(i-k), i=k+1, size(scanning))])
+    end do
 
 end program day01

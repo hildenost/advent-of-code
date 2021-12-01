@@ -9,18 +9,17 @@ with open("input.txt") as f:
 # True equals 1, so I just sum the Boolean array to find the answer
 part1 = sum(np.diff(scanning) > 0)
 print("PART 1:\t", part1)
-# BONUS
-# Solution WITHOUT numpy
-part1 = sum(b - a > 0 for a, b in zip(scanning, scanning[1:]))
-print("PART 1:\t", part1, "\t(native python)")
 
 # python only zips as long as all iterables have elements
 rolling = [(a + b + c) for a, b, c in zip(scanning, scanning[1:], scanning[2:])]
 # Same procedure as in Part 1
 part2 = sum(np.diff(rolling) > 0)
 print("PART 2:\t", part2)
+
 # BONUS
 # Solution WITHOUT numpy
-part2 = sum(b - a > 0 for a, b in zip(rolling, rolling[1:]))
+part1 = sum(b - a > 0 for a, b in zip(scanning, scanning[1:]))
+print("PART 1:\t", part1, "\t(native python)")
+part2 = sum(b - a > 0 for a, b in zip(scanning, scanning[3:]))
 print("PART 2:\t", part2, "\t(native python)")
 
