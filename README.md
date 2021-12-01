@@ -6,3 +6,7 @@ My python solutions to [Advent of Code 2021](https://adventofcode.com/2021)
 
 ## My stars
 Each day can grant you 2 stars if both puzzles are solved. 
+
+| Day | Part 1 | Part 2 |
+|---|:----:|:---:|
+|✔️ [Day 1: Sonar Sweep](01) | ⭐️ | ⭐️ |
