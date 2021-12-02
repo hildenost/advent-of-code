@@ -10,3 +10,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 | Day | Part 1 | Part 2 |
 |---|:----:|:---:|
 |✔️ [Day 1: No Time for a Taxicab](01) | ⭐️ | ⭐️ |
+|✔️ [Day 2: Bathroom Security](02) | ⭐️ | ⭐️ |
