@@ -5,9 +5,9 @@ with open("input.txt") as f:
     course = [c.split() for c in f.read().splitlines()]
 
 cmd1 = {
-    "forward": lambda x, d, p: (d, p + x),
-    "down": lambda x, d, p: (d + x, p),
-    "up": lambda x, d, p: (d - x, p),
+    "forward": lambda x, d, p, aim: (d, p + x, aim),
+    "down": lambda x, d, p, aim: (d + x, p, aim),
+    "up": lambda x, d, p, aim: (d - x, p, aim),
 }
 cmd2 = {
     "forward": lambda x, d, p, aim: (d + aim * x, p + x, aim),
@@ -16,13 +16,13 @@ cmd2 = {
 }
 
 
-def drive(course, part=1):
-    args = (0, 0) if part == 1 else (0, 0, 0)
-    commands = cmd1 if part == 1 else cmd2
+def drive(course, commands):
+    # args = (depth, position, aim)
+    args = (0, 0, 0)
     for cmd, x in course:
         args = commands[cmd](int(x), *args)
     return args[0] * args[1]
 
 
-print("Part 1:\t", drive(course))
-print("Part 2:\t", drive(course, part=2))
+print("Part 1:\t", drive(course, commands=cmd1))
+print("Part 2:\t", drive(course, commands=cmd2))
