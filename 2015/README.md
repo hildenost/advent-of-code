@@ -1,4 +1,4 @@
-# advent-of-code-2015
+# Advent of Code 2015
 My python solutions to the first [Advent of Code 2015](https://adventofcode.com/2015)
 
 ## What is Advent of code?
