@@ -1,40 +1,37 @@
 """ Advent of Code 2021. Day 4: Giant Squid """
+import math
 
 with open("input.txt") as f:
-  numbers, *raw_boards = f.read().splitlines()
+  numbers, *raw_boards = f.read().split("\n\n")
 
 numbers = [int(n) for n in numbers.split(",")]
+boards = [
+    [int(n) for row in rb.splitlines() for n in row.split()]
+    for rb in raw_boards
+]
 
-boards = []
-for i in range(100):
-  b = [int(n) for n in " ".join(raw_boards[6*i + 1:6*(i+1)]).split()]
-  boards.append((b, [0 for _ in range(25)]))
+N = int(math.sqrt(len(boards[0])))
 
 def check_board(board):
-  for i in range(5):
-     if all(board[5*i:5*i+5]):
-        return True 
-     if all(board[i:25-(5-i) + 1:5]):
+  for i in range(N):
+     row_count = board[N*i:N*(i+1)].count(None)
+     col_count = board[i:N*(N-1) + (i+1):N].count(None) 
+     if N in [row_count, col_count]:
         return True 
   return False
 
 def play_bingo(boards, part=1):
-  winning_boards = []
-  winner = False
   for n in numbers:
-    for i, (b, mask) in enumerate(boards):
-      if i in winning_boards:
-        continue
-      if n in b:
-        mask[b.index(n)] = 1
-        if check_board(mask):
-          if (part == 1
-          or (part == 2 and len(winning_boards) == len(boards) - 1)):
-            return n * sum(v for i, v in enumerate(b) if mask[i] == 0)
+    boards = {
+        tuple(None if s == n else s for s in b)
+        for b in boards
+    }
+    won_boards = {b for b in boards if check_board(b)}
+    boards -= won_boards
 
-          winning_boards.append(i)
+    if (part == 1 and won_boards) or (part == 2 and not boards):
+      return n * sum(v for v in won_boards.pop() if v is not None)
 
     
 print("PART 1:\t", play_bingo(boards))
 print("PART 2:\t", play_bingo(boards, part=2))
-
