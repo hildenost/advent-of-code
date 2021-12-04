@@ -12,3 +12,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 1: Sonar Sweep](01) | ⭐️ | ⭐️ |
 |✔️ [Day 2: Dive!](02) | ⭐️ | ⭐️ |
 |✔️ [Day 3: Binary Diagnostic](03) | ⭐️ | ⭐️ |
+|✔️ [Day 4: Giant Squid](04) | ⭐️ | ⭐️ |
