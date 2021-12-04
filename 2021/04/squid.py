@@ -28,19 +28,12 @@ def play_bingo(boards, part=1):
       if n in b:
         mask[b.index(n)] = 1
         if check_board(mask):
-          if part == 1:
-            winner = True
-          elif part == 2:
-            if len(winning_boards) == len(boards) - 1:
-              winner = True
+          if (part == 1
+          or (part == 2 and len(winning_boards) == len(boards) - 1)):
+            return n * sum(v for i, v in enumerate(b) if mask[i] == 0)
 
           winning_boards.append(i)
 
-        if winner:
-          break
-    if winner:
-      break
-  return n * sum(v for i, v in enumerate(b) if mask[i] == 0)
     
 print("PART 1:\t", play_bingo(boards))
 print("PART 2:\t", play_bingo(boards, part=2))
