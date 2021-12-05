@@ -12,3 +12,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 1: No Time for a Taxicab](01) | ⭐️ | ⭐️ |
 |✔️ [Day 2: Bathroom Security](02) | ⭐️ | ⭐️ |
 |✔️ [Day 3: Squares With Three Sides](03) | ⭐️ | ⭐️ |
+|✔️ [Day 4: Security Through Obscurity](04) | ⭐️ | ⭐️ |
