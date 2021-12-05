@@ -13,3 +13,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 2: Dive!](02) | ⭐️ | ⭐️ |
 |✔️ [Day 3: Binary Diagnostic](03) | ⭐️ | ⭐️ |
 |✔️ [Day 4: Giant Squid](04) | ⭐️ | ⭐️ |
+|✔️ [Day 5: Hydrothermal Venture](05) | ⭐️ | ⭐️ |
