@@ -13,3 +13,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 2: Bathroom Security](02) | ⭐️ | ⭐️ |
 |✔️ [Day 3: Squares With Three Sides](03) | ⭐️ | ⭐️ |
 |✔️ [Day 4: Security Through Obscurity](04) | ⭐️ | ⭐️ |
+|✔️ [Day 5: How About a Nice Game of Chess](05) | ⭐️ | ⭐️ |
