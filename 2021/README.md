@@ -15,3 +15,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 4: Giant Squid](04) | ⭐️ | ⭐️ |
 |✔️ [Day 5: Hydrothermal Venture](05) | ⭐️ | ⭐️ |
 |✔️ [Day 6: Lanternfish](06) | ⭐️ | ⭐️ |
+|✔️ [Day 7: The Treachery of Whales](07) | ⭐️ | ⭐️ |
