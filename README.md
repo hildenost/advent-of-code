@@ -17,4 +17,4 @@ Each year can grant you a maximum of 50 stars. I'll try to get them all!
 |   2017 | 0⭐️ ![Progress](https://progress-bar.dev/0/?scale=50&suffix=⭐️)|
 | 🏗 [2016](2016) | 14⭐️ ![Progress](https://progress-bar.dev/14/?scale=50&suffix=⭐️) | 
 | ✔️ [2015](2015) | 50⭐️  ![Progress](https://progress-bar.dev/50/?scale=50&suffix=⭐️)  |
-|**total** | 203⭐️ ![Progress](https://progress-bar.dev/203/?scale=350&suffix=⭐️)|
+|**total** | 205⭐️ ![Progress](https://progress-bar.dev/205/?scale=350&suffix=⭐️)|
