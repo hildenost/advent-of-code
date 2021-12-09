@@ -17,3 +17,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 6: Signals and Noise](06) | ⭐️ | ⭐️ |
 |✔️ [Day 7: Internet Protocol Version 7](07) | ⭐️ | ⭐️ |
 |✔️ [Day 8: Two-Factor Autentication](08) | ⭐️ | ⭐️ |
+|✔️ [Day 9: Explosives in Cyberspace](09) | ⭐️ | ⭐️ |
