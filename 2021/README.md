@@ -18,3 +18,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 7: The Treachery of Whales](07) | ⭐️ | ⭐️ |
 |✔️ [Day 8: Seven Segment Search](08) | ⭐️ | ⭐️ |
 |✔️ [Day 9: Smoke Basin](09) | ⭐️ | ⭐️ |
+|✔️ [Day 10: Syntax Scoring](10) | ⭐️ | ⭐️ |
