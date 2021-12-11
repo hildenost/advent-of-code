@@ -19,3 +19,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 8: Seven Segment Search](08) | ⭐️ | ⭐️ |
 |✔️ [Day 9: Smoke Basin](09) | ⭐️ | ⭐️ |
 |✔️ [Day 10: Syntax Scoring](10) | ⭐️ | ⭐️ |
+|✔️ [Day 11: Dumbo Octopus](11) | ⭐️ | ⭐️ |
