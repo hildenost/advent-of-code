@@ -21,3 +21,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 10: Syntax Scoring](10) | ⭐️ | ⭐️ |
 |✔️ [Day 11: Dumbo Octopus](11) | ⭐️ | ⭐️ |
 |✔️ [Day 12: Passage Pathing](12) | ⭐️ | ⭐️ |
+|✔️ [Day 13: Transparent Origami](13) | ⭐️ | ⭐️ |
