@@ -19,3 +19,5 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 8: Two-Factor Autentication](08) | ⭐️ | ⭐️ |
 |✔️ [Day 9: Explosives in Cyberspace](09) | ⭐️ | ⭐️ |
 |✔️ [Day 10: Balance Bots](10) | ⭐️ | ⭐️ |
+|  Day 11: Radioisotope Thermoelectric Generators |   |   |
+|✔️ [Day 12: Leonardo's Monorail](12) | ⭐️ | ⭐️ |
