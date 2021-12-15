@@ -22,3 +22,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |  Day 11: Radioisotope Thermoelectric Generators |   |   |
 |✔️ [Day 12: Leonardo's Monorail](12) | ⭐️ | ⭐️ |
 |✔️ [Day 13: A Maze of Twisty Little Cubicles](13) | ⭐️ | ⭐️ |
+|✔️ [Day 14: One-Time Pad](14) | ⭐️ | ⭐️ |
