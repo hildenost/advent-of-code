@@ -25,3 +25,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 14: One-Time Pad](14) | ⭐️ | ⭐️ |
 |✔️ [Day 15: Timing is Everything](15) | ⭐️ | ⭐️ |
 |✔️ [Day 16: Dragon Checksum](16) | ⭐️ | ⭐️ |
+|✔️ [Day 17: Two Steps Forward](17) | ⭐️ | ⭐️ |
