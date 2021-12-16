@@ -24,3 +24,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 13: Transparent Origami](13) | ⭐️ | ⭐️ |
 |✔️ [Day 14: Extended Polymerization](14) | ⭐️ | ⭐️ |
 |✔️ [Day 15: Chiton](15) | ⭐️ | ⭐️ |
+|✔️ [Day 16: Packet Decoder](16) | ⭐️ | ⭐️ |
