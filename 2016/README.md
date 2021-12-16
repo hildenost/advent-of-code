@@ -27,3 +27,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 16: Dragon Checksum](16) | ⭐️ | ⭐️ |
 |✔️ [Day 17: Two Steps Forward](17) | ⭐️ | ⭐️ |
 |✔️ [Day 18: Like a Rogue](18) | ⭐️ | ⭐️ |
+|✔️ [Day 19: An Elephant Named Joseph](19) | ⭐️ | ⭐️ |
