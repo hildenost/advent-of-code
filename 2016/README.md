@@ -29,3 +29,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 18: Like a Rogue](18) | ⭐️ | ⭐️ |
 |✔️ [Day 19: An Elephant Named Joseph](19) | ⭐️ | ⭐️ |
 |✔️ [Day 20: Firewall Rules](20) | ⭐️ | ⭐️ |
+|✔️ [Day 21: Scrambled Letters and Hash](21) | ⭐️ | ⭐️ |
