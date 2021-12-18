@@ -26,3 +26,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 15: Chiton](15) | ⭐️ | ⭐️ |
 |✔️ [Day 16: Packet Decoder](16) | ⭐️ | ⭐️ |
 |✔️ [Day 17: Trick Shot](17) | ⭐️ | ⭐️ |
+|✔️ [Day 18: Snailfish](18) | ⭐️ | ⭐️ |
