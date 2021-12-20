@@ -28,3 +28,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 17: Trick Shot](17) | ⭐️ | ⭐️ |
 |✔️ [Day 18: Snailfish](18) | ⭐️ | ⭐️ |
 |✔️ [Day 19: Beacon Scanner](19) | ⭐️ | ⭐️ |
+|✔️ [Day 20: Trench Map](20) | ⭐️ | ⭐️ |
