@@ -29,3 +29,7 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 18: Snailfish](18) | ⭐️ | ⭐️ |
 |✔️ [Day 19: Beacon Scanner](19) | ⭐️ | ⭐️ |
 |✔️ [Day 20: Trench Map](20) | ⭐️ | ⭐️ |
+|  Day 21: Dirac Dice | ⭐️ |   |
+|  Day 22: Reactor Reboot | ⭐️ |   |
+|  Day 23: Amphipod |   |   |
+|✔️ [Day 24: Arithmetic Logic Unit](24) | ⭐️ | ⭐️ |
