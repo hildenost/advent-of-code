@@ -33,3 +33,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |  Day 22: Reactor Reboot | ⭐️ |   |
 |  Day 23: Amphipod |   |   |
 |✔️ [Day 24: Arithmetic Logic Unit](24) | ⭐️ | ⭐️ |
+|  [Day 25: Sea Cucumber](25) | ⭐️ |   |
