@@ -67,6 +67,7 @@ def expand(node):
     current_floor = node.state[node.current]
     # Choose what items to select
 
+
     steps = []
     # First generate all combos
     # Either 1 item
@@ -80,6 +81,41 @@ def expand(node):
         if evaluate(step) and
            evaluate(current_floor - set(step))
     ]
+
+    # If there are several RTG/chip pairs, they are interchangeable
+    # I can select just one couple and let the rest be, reducing the
+    # solution space
+    found_chip = False
+    found_chips = False
+    found_rtg = False
+    found_rtgs = False
+    found_pair = False
+    final_steps = []
+    for s in steps:
+        if len(s) == 1:
+            (i,) = s
+            if isinstance(i, Chip) and not found_chip:
+                final_steps.append(s)
+                found_chip = True
+            elif isinstance(i, RTG) and not found_rtg:
+                final_steps.append(s)
+                found_rtg = True
+        else:
+            if all(isinstance(i, Chip) for i in s):
+                if not found_chips:
+                    final_steps.append(s)
+                    found_chips = True
+            elif all(isinstance(i, RTG) for i in s):
+                if not found_rtgs:
+                    final_steps.append(s)
+                    found_rtgs = True
+            else:
+                if not found_pair:
+                    final_steps.append(s)
+                    found_pair = True
+
+    steps = final_steps
+
     # Need to check both directions: up and down
     queue = []
     for d in (1, -1):
@@ -114,6 +150,8 @@ class Node:
         return hash(tuple(tuple(sorted(floor)) for floor in self.state))
 
     def __lt__(self, other):
+        if self.score == other.score:
+            return self.g < other.g
         return self.score < other.score
 
     def heuristic(self):
