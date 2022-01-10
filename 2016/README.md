@@ -30,4 +30,5 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 19: An Elephant Named Joseph](19) | ⭐️ | ⭐️ |
 |✔️ [Day 20: Firewall Rules](20) | ⭐️ | ⭐️ |
 |✔️ [Day 21: Scrambled Letters and Hash](21) | ⭐️ | ⭐️ |
- Day 22: Grid Computing | ⭐️ |  |
+| Day 22: Grid Computing | ⭐️ |  |
+|✔️ [Day 23: Safe Cracking](23) | ⭐️ | ⭐️ |
