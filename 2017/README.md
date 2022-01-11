@@ -11,5 +11,5 @@ Each day can grant you 2 stars if both puzzles are solved.
 |---|:----:|:---:|
 |✔️ [Day 1: Inverse Captcha](01) | ⭐️ | ⭐️ |
 |✔️ [Day 2: Corruption Checksum](02) | ⭐️ | ⭐️ |
-| Day 3: Spiral Memory| ⭐️ |  |
+|✔️ [Day 3: Spiral Memory](03)| ⭐️ | ⭐️ |
 |✔️ [Day 4: High-Entropy Passphrases](04) | ⭐️ | ⭐️ |
