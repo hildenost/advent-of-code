@@ -1,11 +1,6 @@
 """ Advent of Code 2016. Day 22: Grid Computing """
 import re
 
-pattern = re.compile(r"/dev/grid/node-x(\d+)-y(\d+)\s+\w+\s+(\d+)T\s+(\d+)T")
-
-with open("input.txt") as f:
-    __, __, *df = f.read().splitlines()
-
 df = """/dev/grid/node-x0-y0   10T    8T     2T   80%
 /dev/grid/node-x0-y1   11T    6T     5T   54%
 /dev/grid/node-x0-y2   32T   28T     4T   87%
@@ -17,180 +12,148 @@ df = """/dev/grid/node-x0-y0   10T    8T     2T   80%
 /dev/grid/node-x2-y2    9T    6T     3T   66%
 """.splitlines()
 
+with open("input.txt") as f:
+    __, __, *df = f.read().splitlines()
+
+pattern = re.compile(r"/dev/grid/node-x(\d+)-y(\d+)\s+\w+\s+(\d+)T\s+(\d+)T")
+
 # Initialize grid
 grid = {}
+space = {}
 for line in df:
     x, y, used, avail = [int(g) for g in re.search(pattern, line).groups()]
-    grid[(x, y)] = [used, avail]
+    grid[(x, y)] = used
+    space[(x, y)] = avail
+    if used == 0:
+        empty = (x, y)
 
 
-SIZE = 30
 SIZE, __ = max(grid.keys())
+
 all_nodes = [(x, y) for x in range(SIZE + 1) for y in range(SIZE + 1)]
+# print(all_nodes)
+
+viable_pairs = sum(
+    grid[A] <= space[B] for A in all_nodes for B in all_nodes if grid[A] > 0 and A != B
+)
+
+print("Part 1:\t", viable_pairs)
 
 
-# viable_pairs = sum(
-#    grid[A][0] <= grid[B][1]
-#    for A in all_nodes
-#    for B in all_nodes
-#    if grid[A][0] > 0 and A != B
-# )
-#
-# print("Part 1:\t", viable_pairs)
-print("GOAL data:\t", grid[(SIZE, 0)])
+def draw(grid, threshold=9999, current=None, visited=None):
+    size, __ = max(grid.keys())
+    for y in range(size + 1):
+        row = ""
+        for x in range(size + 1):
+            if grid[(x, y)] == 0:
+                row += "  O  "
+            elif (x, y) == (0, 0):
+                row += " (.) "
+            elif (x, y) == (size, 0):
+                row += "  G  "
+            elif grid[(x, y)] > threshold:
+                row += "  #  "
+            elif current is not None and (x, y) == current:
+                row += "  *  "
+            elif visited is not None and (x, y) in visited:
+                row += f"  {visited[(x, y)]:2d} "
+            else:
+                row += "  .  "
+        print(row)
 
-# Keeping the size of the goal data
-G = grid[(SIZE, 0)][0]
-goal = (0, 0)
-queue = [(0, SIZE, 0, grid)]
 
-# The spots where G has been
-neighbours = [(0, 1), (1, 0), (-1, 0), (0, -1)]
+# First, let's visually inspect the grid
+
+# After taking a glance at the input data,
+# it seems some nodes are ridiculously larger
+# than the rest. Testing with a threshold of 100.
+draw(grid, threshold=100)
+
+# I initially solved the problem by manually
+# counting the steps
+
+# The problem is two-part:
+# 1. Move the empty space next to the goal data
+# 2. Move the goal data along the top row
+
+import math
+
+# First part will be solved using A*
+class Node:
+    def __init__(self, pos, goal, cost=0):
+        self.pos = pos
+        self.goal = goal
+        self.g = cost
+        self.h = self.heuristic()
+        self.score = self.g + self.h
+
+    def heuristic(self):
+        return sum(abs(a - b) for a, b in zip(self.pos, self.goal))
+
+    def __lt__(self, other):
+        if self.score == other.score:
+            return self.g > other.g
+        return self.score < other.score
+
+    def __eq__(self, other):
+        return (self.pos) == (other.pos)
+
+    def __hash__(self):
+        return hash(self.pos)
+
+    def __repr__(self):
+        return f"Node({self.pos}, score={self.score}, h={self.h})"
 
 
-def movearound(start, g):
+THRESHOLD = 100
+
+
+def expand(node):
+    x, y = node.pos
+    queue = []
+    for dx, dy in [(-1, 0), (0, -1), (1, 0), (0, -1)]:
+        if grid.get((x + dx, y + dy), THRESHOLD) < THRESHOLD:
+            queue.append(Node((x + dx, y + dy), node.goal, node.g + 1))
+    return queue
+
+
+from heapq import heappush
+from heapq import heappop
+
+
+def astar(startnode):
+    open_list = [startnode]
+    closed_list = set()
+
+    while open_list:
+        n = heappop(open_list)
+
+        if n in closed_list:
+            continue
+
+        closed_list.add(n)
+
+        if n.pos == n.goal:
+            return n.g
+
+        children = expand(n)
+
+        for c in children:
+            if c in closed_list:
+                continue
+            heappush(open_list, c)
+
     print()
-    print("Inside subqueue")
-    # This should be recursive also?
-    steps = {key: 99999999999999999999999999999999999999 for key in all_nodes}
-    steps[start] = 0
-    # End criteria:
-    # - Can move
-    # - Cannot move at all
-    G = g[start][0]
-    visited = set()
-    queue = [(0, *start, g)]
-    while queue:
-        queue.sort()
-        __, x, y, g = queue.pop(0)
-
-        print(visited)
-        if (x, y) in visited:
-            continue
-        print()
-        print()
-        print("WE AT ", x, y, " with data: ", g[(x, y)])
-        for dx, dy in neighbours:
-            print()
-            if (x + dx, y + dy) in grid:
-                print("WANNA VISIT ", x + dx, y + dy)
-                print("Can we move to ", x + dx, y + dy, " right away?")
-                print("Goal size: ", G, "\t available at target: ", g[(x + dx, y + dy)])
-                print(steps[(x + dx, y + dy)], steps[(x, y)])
-                if G <= g[(x + dx, y + dy)][1]:
-                    print("MOVING AT ONCE!!!")
-                    print("only one move")
-                    new_g = g.copy()
-                    # used
-                    new_g[(x + dx, y + dy)][0] += G
-                    # avail
-                    new_g[(x + dx, y + dy)][1] -= G
-                    # old spot
-                    new_g[(x, y)][0] -= G
-                    new_g[(x, y)][1] += G
-                    print(new_g[(x, y)])
-                    print(new_g[(x + dx, y + dy)])
-                    steps[(x + dx, y + dy)] = min(
-                        steps[(x + dx, y + dy)], steps[(x, y)] + 1
-                    )
-                    print(steps[(x + dx, y + dy)], steps[(x, y)])
-                    return (steps[(x + dx, y + dy)], new_g)
-                elif G <= sum(g[(x + dx, y + dy)]):
-                    print("GOT SPACE, but must move around stuffs first")
-                    # time to recurse?
-                    steps[(x + dx, y + dy)] = min(
-                        steps[(x + dx, y + dy)], steps[(x, y)] + 1
-                    )
-                    print(steps[(x + dx, y + dy)], steps[(x, y)])
-                    queue.append((steps[(x + dx, y + dy)], x + dx, y + dy, g.copy()))
-        visited.add((x, y))
-    print("Nope, cannot")
-    return
+    print("Explored ", len(closed_list), " nodes")
+    return "NO SOLUTION"
 
 
-# This should be recursive also?
-steps = {key: 99999999999999999999999999999999999999 for key in all_nodes}
-steps[(SIZE, 0)] = 0
+startnode = Node(empty, (SIZE - 1, 0))
 
-
-def move(start, end, g):
-
-    G = g[start][0]
-    visited = set()
-    queue = [(0, *start, g)]
-    while queue:
-        queue.sort()
-        __, x, y, g = queue.pop(0)
-
-        if (x, y) == end:
-            print("DONE")
-            return
-
-        if (x, y) in visited:
-            continue
-        print()
-        print()
-        print("WE AT ", x, y, " with data: ", g[(x, y)])
-        for dx, dy in neighbours:
-            print()
-            if (x + dx, y + dy) in grid:
-                print("WANNA VISIT ", x + dx, y + dy)
-                print("Can we move to ", x + dx, y + dy, " right away?")
-                print("Goal size: ", G, "\t available at target: ", g[(x + dx, y + dy)])
-                print(steps[(x + dx, y + dy)])
-                if G <= g[(x + dx, y + dy)][1]:
-                    print("MOVING AT ONCE!!!")
-                    print("only one move")
-                    new_g = g.copy()
-                    # used
-                    new_g[(x + dx, y + dy)][0] += G
-                    # avail
-                    new_g[(x + dx, y + dy)][1] -= G
-                    # old spot
-                    new_g[(x, y)][0] -= G
-                    new_g[(x, y)][0] += G
-                    print(new_g[(x, y)])
-                    print(new_g[(x + dx, y + dy)])
-                    steps[(x + dx, y + dy)] = min(
-                        steps[(x + dx, y + dy)], steps[(x, y)] + 1
-                    )
-                    queue.append((steps[(x + dx, y + dy)], x + dx, y + dy, new_g))
-                elif G <= sum(g[(x + dx, y + dy)]):
-                    s, new_g = movearound((x + dx, y + dy), g.copy())
-                    print("WE HAVE MOVED AROUND")
-                    steps[(x + dx, y + dy)] = min(
-                        steps[(x + dx, y + dy)], steps[(x, y)] + s
-                    )
-                    print(steps[(x + dx, y + dy)], steps[(x, y)], s)
-                    queue.append((steps[(x + dx, y + dy)], x + dx, y + dy, new_g))
-                else:
-                    print("CANNOT GO HERE :( :( :(")
-        visited.add((x, y))
-    print("Nope, cannot")
-    return
-
-
-print(move((SIZE, 0), (0, 0), grid))
-
-print(steps)
-exit()
-
-x, y = (0, 0)
-d[y][x] = 0
-queue = [(0, x, y)]
-while queue:
-    queue.sort()
-    __, x, y = queue.pop(0)
-    if (x, y) in visited:
-        continue
-
-    for dx, dy in neighbours:
-        fx = (x + dx) // len(cave[0])
-        fy = (y + dy) // len(cave)
-        if 0 <= fx < 5 and 0 <= fy < 5:
-            d[y + dy][x + dx] = min(
-                d[y][x] + get_value(x + dx, y + dy, fx, fy), d[y + dy][x + dx]
-            )
-            queue.append((d[y + dy][x + dx], x + dx, y + dy))
-
-    visited.add((x, y))
+# First number of steps:
+to_goal = astar(startnode)
+# For the second part, it takes 5 steps to move the
+# goal data one step to the left
+# Note that the final nudge only requires 1 step
+to_output = 5 * (SIZE - 1) + 1
+print("Part 2:\t", to_goal + to_output)
