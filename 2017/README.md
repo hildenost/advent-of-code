@@ -16,3 +16,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 5: A Maze of Twisty Trampolines, All Alike](05) | ⭐️ | ⭐️ |
 |✔️ [Day 6: Memory Reallocation](06) | ⭐️ | ⭐️ |
 |✔️ [Day 7: Recursive Circus](07) | ⭐️ | ⭐️ |
+|✔️ [Day 8: I Heard You Like Registers](08) | ⭐️ | ⭐️ |
