@@ -18,3 +18,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 7: Recursive Circus](07) | ⭐️ | ⭐️ |
 |✔️ [Day 8: I Heard You Like Registers](08) | ⭐️ | ⭐️ |
 |✔️ [Day 9: Stream Processing](09) | ⭐️ | ⭐️ |
+|✔️ [Day 10: Knot Hash](10) | ⭐️ | ⭐️ |
