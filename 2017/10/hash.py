@@ -48,13 +48,14 @@ def to_hex(numbers):
 
 def knothash(lengths):
     additional = [17, 31, 73, 47, 23]
-    lengths = ",".join(str(l) for l in lengths)
     lengths = [ord(l) for l in lengths] + additional
     return to_hex(densehash(sparsehash(lengths)))
 
 
 lst, p, skip = twist(list(range(256)), lengths)
 
-print("Part 1:\t", lst[0] * lst[1])
-print("Part 2:\t", knothash(lengths))
+if __name__ == "__main__":
+    print("Part 1:\t", lst[0] * lst[1])
+    lengths = ",".join(str(l) for l in lengths)
+    print("Part 2:\t", knothash(lengths))
 
