@@ -25,3 +25,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 14: Disk Defragmentation](14) | ⭐️ | ⭐️ |
 |✔️ [Day 15: Dueling Generators](15) | ⭐️ | ⭐️ |
 |✔️ [Day 16: Permutation Promenade](16) | ⭐️ | ⭐️ |
+|✔️ [Day 17: Spinlock](17) | ⭐️ | ⭐️ |
