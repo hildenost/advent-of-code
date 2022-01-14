@@ -28,3 +28,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 17: Spinlock](17) | ⭐️ | ⭐️ |
 |✔️ [Day 18: Duet](18) | ⭐️ | ⭐️ |
 |✔️ [Day 19: A Series of Tubes](19) | ⭐️ | ⭐️ |
+|✔️ [Day 20: Particle Swarm](20) | ⭐️ | ⭐️ |
