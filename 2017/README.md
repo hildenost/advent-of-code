@@ -26,3 +26,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 15: Dueling Generators](15) | ⭐️ | ⭐️ |
 |✔️ [Day 16: Permutation Promenade](16) | ⭐️ | ⭐️ |
 |✔️ [Day 17: Spinlock](17) | ⭐️ | ⭐️ |
+|✔️ [Day 18: Duet](18) | ⭐️ | ⭐️ |
