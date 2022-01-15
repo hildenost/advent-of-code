@@ -29,3 +29,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 18: Duet](18) | ⭐️ | ⭐️ |
 |✔️ [Day 19: A Series of Tubes](19) | ⭐️ | ⭐️ |
 |✔️ [Day 20: Particle Swarm](20) | ⭐️ | ⭐️ |
+|✔️ [Day 21: Fractal Art](21) | ⭐️ | ⭐️ |
