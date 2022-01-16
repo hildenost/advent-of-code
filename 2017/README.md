@@ -30,3 +30,5 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 19: A Series of Tubes](19) | ⭐️ | ⭐️ |
 |✔️ [Day 20: Particle Swarm](20) | ⭐️ | ⭐️ |
 |✔️ [Day 21: Fractal Art](21) | ⭐️ | ⭐️ |
+|✔️ [Day 22: Sporifica Virus](22) | ⭐️ | ⭐️ |
+|✔️ [Day 23: Coprocessor Conflagration](23) | ⭐️ | ⭐️ |
