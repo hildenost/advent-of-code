@@ -32,3 +32,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 21: Fractal Art](21) | ⭐️ | ⭐️ |
 |✔️ [Day 22: Sporifica Virus](22) | ⭐️ | ⭐️ |
 |✔️ [Day 23: Coprocessor Conflagration](23) | ⭐️ | ⭐️ |
+|✔️ [Day 24: Electromagnetic Moat](24) | ⭐️ | ⭐️ |
