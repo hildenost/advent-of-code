@@ -19,3 +19,4 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 8: Memory Maneuver](08)   | ⭐️ | ⭐️|
 |✔️ [Day 9: Marble Mania](09)   | ⭐️ | ⭐️|
 |✔️ [Day 10: The Stars Align](10)   | ⭐️ | ⭐️|
+|✔️ [Day 11: Chronal Charge](11)   | ⭐️ | ⭐️|
