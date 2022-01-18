@@ -17,3 +17,4 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 6: Chronal Coordinates](06)   | ⭐️ |⭐️  |
 |✔️ [Day 7: The Sum of Its Parts](07)   | ⭐️ | ⭐️|
 |✔️ [Day 8: Memory Maneuver](08)   | ⭐️ | ⭐️|
+|✔️ [Day 9: Marble Mania](09)   | ⭐️ | ⭐️|
