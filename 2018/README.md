@@ -21,5 +21,5 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 10: The Stars Align](10)   | ⭐️ | ⭐️|
 |✔️ [Day 11: Chronal Charge](11)   | ⭐️ | ⭐️|
 |✔️ [Day 12: Subterranean Sustainability](12)   | ⭐️ | ⭐️|
-| Day 13: Mine Cart Madness  | ️ | ️|
+|✔️ [Day 13: Mine Cart Madness](13)  | ⭐️ | ⭐️|
 |✔️ [Day 14: Chocolate Charts](14)   | ⭐️ | ⭐️|
