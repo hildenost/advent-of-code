@@ -24,3 +24,4 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 13: Mine Cart Madness](13)  | ⭐️ | ⭐️|
 |✔️ [Day 14: Chocolate Charts](14)   | ⭐️ | ⭐️|
 |✔️ [Day 15: Beverage Bandits](15)   | ⭐️ | ⭐️|
+|✔️ [Day 16: Chronal Classification](16)   | ⭐️ | ⭐️|
