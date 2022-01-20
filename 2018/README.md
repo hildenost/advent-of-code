@@ -23,3 +23,4 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 12: Subterranean Sustainability](12)   | ⭐️ | ⭐️|
 |✔️ [Day 13: Mine Cart Madness](13)  | ⭐️ | ⭐️|
 |✔️ [Day 14: Chocolate Charts](14)   | ⭐️ | ⭐️|
+|✔️ [Day 15: Beverage Bandits](15)   | ⭐️ | ⭐️|
