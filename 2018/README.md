@@ -25,3 +25,5 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 14: Chocolate Charts](14)   | ⭐️ | ⭐️|
 |✔️ [Day 15: Beverage Bandits](15)   | ⭐️ | ⭐️|
 |✔️ [Day 16: Chronal Classification](16)   | ⭐️ | ⭐️|
+|Day 17: Chronal Classification   | ⭐️ | ⭐️|
+|✔️ [Day 18: Settlers of The North Pole](18)   | ⭐️ | ⭐️|
