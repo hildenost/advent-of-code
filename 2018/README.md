@@ -30,5 +30,5 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 19: Go With The Flow](19)   | ⭐️ | ⭐️|
 |✔️ [Day 20: A Regular Map](20)   | ⭐️ | ⭐️|
 |✔️ [Day 21: Chronal Conversion](21)   | ⭐️ | ⭐️|
-|Day 22: Mode Maze   | ⭐️ | |
+|✔️ [Day 22: Mode Maze](22)   | ⭐️ | ⭐️ |
 |[Day 23: Experimental Emergency Teleportation](23)   | ⭐️ | |
