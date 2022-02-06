@@ -40,6 +40,9 @@ class Unit:
         self.hp = hp
         self.power = power
 
+    def __repr__(self):
+        return f"{self.species}({self.pos[1]}, {self.pos[0]}, {self.hp})"
+
     def __lt__(self, other):
         return self.pos < other.pos
 
@@ -128,6 +131,29 @@ def bfs(grid, startnode, goals):
         pos = came_from[pos]
     return pos 
 
+def draw(grid, elves, goblins):
+    elves = {elf.pos for elf in elves}
+    goblins = {goblin.pos for goblin in goblins}
+
+    xmin = min(x for y, x in grid)
+    xmax = max(x for y, x in grid)
+    print(xmin, xmax)
+    ymin = min(y for y, x in grid)
+    ymax = max(y for y, x in grid)
+    print(ymin, ymax)
+    for y in range(ymin-1, ymax+2):
+        row = ""
+        for x in range(xmin - 1, xmax +2):
+            if (y, x) in elves:
+                row += "E"
+            elif (y, x) in goblins:
+                row += "G"
+            elif (y, x) in grid:
+                row += "."
+            else:
+                row += "#"
+        print(row)
+
 
 def battle(grid, elves, goblins):
     n_elves = len(elves)
@@ -167,7 +193,7 @@ def increase_elves_attack(raw_grid):
     return outcome
 
 
-with open("input.txt") as f:
+with open("input_am.txt") as f:
     raw_grid = f.read().splitlines()
 
 print("Part 1:\t", battle(*parse(raw_grid))[0])
