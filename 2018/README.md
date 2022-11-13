@@ -31,6 +31,6 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 20: A Regular Map](20)   | ⭐️ | ⭐️|
 |✔️ [Day 21: Chronal Conversion](21)   | ⭐️ | ⭐️|
 |✔️ [Day 22: Mode Maze](22)   | ⭐️ | ⭐️ |
-|[Day 23: Experimental Emergency Teleportation](23)   | ⭐️ | |
+|✔️ [Day 23: Experimental Emergency Teleportation](23)   | ⭐️ | ⭐️ |
 |✔️ [Day 24: Immune System Simulator 20XX](24)   | ⭐️ | ⭐️ |
-|[Day 25: Four-Dimensional Adventure](25) | ⭐️ | |
+|✔️ [Day 25: Four-Dimensional Adventure](25) | ⭐️ | ⭐️ |
