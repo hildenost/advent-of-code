@@ -20,7 +20,7 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 9: Sensor Boost](09)   | ⭐️ | ⭐️|
 |✔️ [Day 10: Monitoring Station](10)   | ⭐️ | ⭐️|
 |✔️ [Day 11: Space Police](11)   | ⭐️ | ⭐️|
-|[Day 12: The N-Body Problem](12)   | ⭐️ | |
+|✔️ [Day 12: The N-Body Problem](12)   | ⭐️ | ⭐️|
 |✔️ [Day 13: Care Package](13)  | ⭐️ | ⭐️|
 |Day 14: Chocolate Charts   | | |
 |✔️ [Day 15: Oxygen System](15)   | ⭐️ | ⭐️|
