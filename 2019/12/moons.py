@@ -36,7 +36,43 @@ velos = np.zeros_like(moons)
 print(run_steps(moons, velos, 1000))
 
 #### PART 2
+def run(moons, velocities):
+    moons_0 = moons.copy()
+    velos_0 = velocities.copy()
+    t = 0
+    times = [0, 0, 0]
+    while not all(t > 0 for t in times):
+        t += 1
+        velocities = update_velocities(moons, velocities)
+        moons = update_positions(moons, velocities)
 
+        if (
+            np.array_equal(moons[:, 0], moons_0[:, 0])
+            and np.array_equal(velocities[:, 0], velos_0[:, 0])
+            and times[0] == 0
+        ):
+            times[0] = t
+        if (
+            np.array_equal(moons[:, 1], moons_0[:, 1])
+            and np.array_equal(velocities[:, 1], velos_0[:, 1])
+            and times[1] == 0
+        ):
+            times[1] = t
+        if (
+            np.array_equal(moons[:, 2], moons_0[:, 2])
+            and np.array_equal(velocities[:, 2], velos_0[:, 2])
+            and times[2] == 0
+        ):
+            times[2] = t
+
+    print(times)
+    # Need to factor them
+    # Did it manually
+
+
+moons = np.array([[-8, -9, -7], [-5, 2, -1], [11, 8, -14], [1, -4, -11]])
+velos = np.zeros_like(moons)
+run(moons, velos)
 
 #### TESTS
 def test_first_example():
