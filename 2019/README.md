@@ -24,7 +24,7 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 13: Care Package](13)  | ⭐️ | ⭐️|
 |✔️ [Day 14: Space Stoichiometry](14) | ⭐️ | ⭐️|
 |✔️ [Day 15: Oxygen System](15)   | ⭐️ | ⭐️|
-|[Day 16: Flawed Frequency Transmission](16)   | ⭐️ ||
+|✔️ [Day 16: Flawed Frequency Transmission](16)   | ⭐️ |⭐️ |
 |✔️ [Day 17: Set and Forget](17)   | ⭐️ | ⭐️|
 |Day 18: Many-Worlds Interpretation  |  | |
 |✔️ [Day 19: Tractor Beam](19)   | ⭐️ | ⭐️|
