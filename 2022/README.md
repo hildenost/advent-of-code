@@ -10,3 +10,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 | Day | Part 1 | Part 2 |
 |---|:----:|:---:|
 |✔️ [Day 1: Calorie Counting](01) | ⭐️ | ⭐️ |
+|✔️ [Day 2: Rock Paper Scissors](02) | ⭐️ | ⭐️ |
