@@ -14,10 +14,13 @@
 
 (def lists (map #(partition (/ (count %) 2) %) rucksacks))
 (def sets (for [l lists] (map set l)))
-
 (def items (map #(apply set/intersection %) sets))
 (def ascii (map int (map first items)))
 (def priorities (map #(if (< % 96) (- % 38) (- % 96)) ascii))
-(println (reduce + priorities))
+(println "Part 1:" (reduce + priorities))
 
+(def items (map #(apply set/intersection %) (partition 3 (map set rucksacks))))
+(def ascii (map int (map first items)))
+(def priorities (map #(if (< % 96) (- % 38) (- % 96)) ascii))
+(println "Part 2:" (reduce + priorities))
 
