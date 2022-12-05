@@ -11,3 +11,6 @@ Each day can grant you 2 stars if both puzzles are solved.
 |---|:----:|:---:|
 |✔️ [Day 1: Calorie Counting](01) | ⭐️ | ⭐️ |
 |✔️ [Day 2: Rock Paper Scissors](02) | ⭐️ | ⭐️ |
+|✔️ [Day 3: Rucksack Reorganization](03) | ⭐️ | ⭐️ |
+|✔️ [Day 4: Camp Cleanup](04) | ⭐️ | ⭐️ |
+|✔️ [Day 5: Supply Stacks](05) | ⭐️ | ⭐️ |
