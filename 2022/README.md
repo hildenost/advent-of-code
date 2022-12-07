@@ -14,3 +14,5 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 3: Rucksack Reorganization](03) | ⭐️ | ⭐️ |
 |✔️ [Day 4: Camp Cleanup](04) | ⭐️ | ⭐️ |
 |✔️ [Day 5: Supply Stacks](05) | ⭐️ | ⭐️ |
+|✔️ [Day 6: Tuning Trouble](06) | ⭐️ | ⭐️ |
+|✔️ [Day 7: No Space Left On Device](07) | ⭐️ | ⭐️ |
