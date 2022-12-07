@@ -1,47 +1,18 @@
 """ Advent of Code 2022. Day 7: No Space Left On Device """
 
-sample = """$ cd /
-$ ls
-dir a
-14848514 b.txt
-8504156 c.dat
-dir d
-$ cd a
-$ ls
-dir e
-29116 f
-2557 g
-62596 h.lst
-$ cd e
-$ ls
-584 i
-$ cd ..
-$ cd ..
-$ cd d
-$ ls
-4060174 j
-8033020 d.log
-5626152 d.ext
-7214296 k
-"""
-
-sample = sample.splitlines()
-
 with open("input.txt") as f:
-    sample = f.read().splitlines()
+    cmds = f.read().splitlines()
 
 sizes = {}
 cwds = []
-
-for i in range(len(sample)):
-    a, b, *c = sample[i].split()
+for line in cmds:
+    a, b, *c = line.split()
 
     if b == "cd":
-        cwd = c[0]
-        if cwd == "..":
+        if c[0] == "..":
             cwds.pop()
         else:
-            cwds.append(cwd)
+            cwds.append(*c)
             sizes[tuple(cwds)] = 0
 
     if a.isdigit():
