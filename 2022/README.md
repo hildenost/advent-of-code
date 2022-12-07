@@ -1,5 +1,5 @@
 # Advent of Code 2022
-My python solutions to [Advent of Code 2022](https://adventofcode.com/2022)
+My python solutions to [Advent of Code 2022](https://adventofcode.com/2022). There are also some [code golf](https://en.wikipedia.org/wiki/Code_golf) solutions that break almost any [Python zen rule](https://peps.python.org/pep-0020/). Read those at own risk.
 
 ## What is Advent of code?
 [Advent of Code](https://adventofcode.com/about) is an annual advent calendar with new small programming puzzles each day. Created by Eric Wastl.
