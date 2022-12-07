@@ -6,18 +6,15 @@ with open("input.txt") as f:
 sizes = {}
 cwds = []
 for line in cmds:
-    a, b, *c = line.split()
-
-    if b == "cd":
-        if c[0] == "..":
+    match line.split():
+        case ["$", "cd", ".."]:
             cwds.pop()
-        else:
-            cwds.append(*c)
+        case ["$", "cd", x]:
+            cwds.append(x)
             sizes[tuple(cwds)] = 0
-
-    if a.isdigit():
-        for l in range(len(cwds)):
-            sizes[tuple(cwds[:l+1])] += int(a)
+        case [d, __] if d.isdigit():
+            for l in range(len(cwds)):
+                sizes[tuple(cwds[:l+1])] += int(d)
 
 part1 = sum(s for s in sizes.values() if s <= 100000)
 print("Part 1:\t", part1)
