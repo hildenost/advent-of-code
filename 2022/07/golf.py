@@ -4,7 +4,7 @@ for l in open("a"):
  if y=="cd":
   if z[0]=="..":
    r=s[c]
-   if r<=100000:t+=r
+   if r<=1e5:t+=r
    c=c[:-1]
   else:
    c+=(*z,)
