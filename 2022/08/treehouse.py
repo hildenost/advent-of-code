@@ -2,55 +2,79 @@
 from itertools import takewhile
 
 with open("input.txt") as f:
-    sample = f.read()
+    forest = f.read().splitlines()
 
 trees = set()
-for i, row in enumerate(sample.splitlines()):
-    prev = row[0]
+height, width = len(forest), len(forest[0])
+# Horisontal sightlines
+for i in range(height):
+    left = forest[i][0]
+    right = forest[i][-1]
+
     trees.add((i, 0))
-    for j, col in enumerate(row[1:]):
-        if prev < col:
-            trees.add((i, j+1))
-            prev = col
+    trees.add((i, width-1))
+    for j in range(1, width):
+        if left < forest[i][j]:
+            trees.add((i, j))
+            left = forest[i][j]
+        if right < forest[i][width-j]:
+            trees.add((i, width-j))
+            right = forest[i][width-j]
+# Vertical sightlines
+for j in range(width):
+    down = forest[0][j]
+    up = forest[-1][j]
 
-    rev = row[::-1]
-    prev = rev[0]
-    trees.add((i, len(row)-1))
-    for j, col in enumerate(rev[1:]):
-        if prev < col:
-            trees.add((i, len(row)-j-2))
-            prev = col
-
-s = sample.splitlines()
-for j in range(len(s[0])):
-    prev = s[0][j]
     trees.add((0, j))
-    for i in range(1, len(s)):
-        if prev < s[i][j]:
+    trees.add((height-1, j))
+    for i in range(1, height):
+        if down < forest[i][j]:
             trees.add((i, j))
-            prev = s[i][j]
+            down = forest[i][j]
 
-    prev = s[-1][j]
-    trees.add((len(s)-1, j))
-    for i in range(len(s)-2, -1, -1):
-        if prev < s[i][j]:
-            trees.add((i, j))
-            prev = s[i][j]
+        if up < forest[height-i][j]:
+            trees.add((height-i, j))
+            up = forest[height-i][j]
 
 print("Part 1:\t", len(trees))
 
 ## Part 2
 highest = 0
-for k in range(len(s)):
-    for i in range(len(s[k])):
-        right = len(list(takewhile(lambda x: x<s[k][i], (s[k][j] for j in range(i+1, len(s[k]))))))
-        left = len(list(takewhile(lambda x: x<s[k][i], (s[k][j] for j in range(i-1, -1,-1)))))
-        down = len(list(takewhile(lambda x: x<s[k][i], (s[m][i] for m in range(k+1, len(s))))))
-        up = len(list(takewhile(lambda x: x<s[k][i], (s[m][i] for m in range(k-1, -1,-1)))))
-        right += (i != len(s[k])-1 and (len(s[k])-1-i)!=right)
+for k in range(width):
+    for i in range(height):
+        # Add all visible trees
+        right = len(list(
+            takewhile(
+                lambda x: x<forest[k][i],
+                (forest[k][j] for j in range(i+1, width))
+                )
+            ))
+        left = len(list(
+            takewhile(
+                lambda x: x<forest[k][i],
+                (forest[k][j] for j in range(i-1, -1,-1))
+                )
+            ))
+        down = len(list(
+            takewhile(
+                lambda x: x<forest[k][i],
+                (forest[m][i] for m in range(k+1, height))
+                )
+            ))
+        up = len(list(
+            takewhile(
+                lambda x: x<forest[k][i],
+                (forest[m][i] for m in range(k-1, -1,-1))
+                )
+            ))
+
+        # Adjust counts
+        # Add 1 unless tree is at edge or all trees until edge are visible
+        right += (i != width-1 and (width-1-i)!=right)
         left += (i != 0 and i!=left)
         up += (k != 0 and k!=up)
-        down += (k != len(s)-1 and (len(s)-1-k)!=down)
+        down += (k != height-1 and (height-1-k)!=down)
+
         highest = max(highest, right*left*up*down) 
 
 print("Part 2:\t", highest)
