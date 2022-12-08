@@ -35,7 +35,6 @@ for j in range(width):
         if up < forest[height-i][j]:
             trees.add((height-i, j))
             up = forest[height-i][j]
-
 print("Part 1:\t", len(trees))
 
 ## Part 2
