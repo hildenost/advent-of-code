@@ -8,7 +8,6 @@ for k in 2,10:
    for i in range(1,k):
     x,y=r[i]
     v,w=r[i-1]
-    if -2<v-x<2 and -2<w-y<2:break
-    r[i]=(x+(v>x)-(v<x),y+(w>y)-(w<y))
+    if not(-2<v-x<2 and -2<w-y<2):r[i]=(x+(v>x)-(v<x),y+(w>y)-(w<y))
    h|={r[-1]}
  print(len(h))
