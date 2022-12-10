@@ -1,29 +1,11 @@
 program day02
+  use utils, only: readinput
   implicit none
 
-  ! Variables related to file I/O
-  integer :: iostat
-  integer :: io
-  integer :: length = 0
-
   ! Problem related variables
-  character, dimension(:, :), allocatable :: scanning
+  character, dimension(:,:), allocatable :: scanning
 
-  ! Fortran needs to know how large the array is going to be
-  ! before allocating
-  ! First we do a pass over the input file to count number of lines
-  open(newunit=io, file="02/input.txt", status="old", action="read")
-  do
-      read(io, *, iostat=iostat)
-      if (is_iostat_end(iostat)) exit
-      length = length + 1
-  end do
-  ! Now we can allocate our scanning array
-  allocate(scanning(2, length))
-  ! And finally, we can store the input in the array
-  rewind(io)
-  read(io, *) scanning
-  close(io)
+  call readinput(scanning, day="02", cols=2)
 
   write (*,*) "Part 1", sum(score1(scanning(1,:), scanning(2,:)))
   write (*,*) "Part 2", sum(score2(scanning(1,:), scanning(2,:)))
@@ -34,7 +16,6 @@ contains
     character, intent(in) :: opponent
     character, intent(in) :: me
     integer               :: score
-
 
     select case (ichar(me)-ichar(opponent))
     ! If equal, me-opp = 23
