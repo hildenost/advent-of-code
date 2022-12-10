@@ -18,3 +18,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 7: No Space Left On Device](07) | ⭐️ | ⭐️ |
 |✔️ [Day 8: Treetop Tree House](08) | ⭐️ | ⭐️ |
 |✔️ [Day 9: Rope Bridge](09) | ⭐️ | ⭐️ |
+|✔️ [Day 10: Cathode-Ray Tube](10) | ⭐️ | ⭐️ |
