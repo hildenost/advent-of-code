@@ -1,9 +1,10 @@
 import re
+a=re.findall
 q=int
 s=open("a").read()
-o=[(lambda x:x*x)if f=="o"else(lambda b:lambda x:x+b)(q(f))if o=="+"else(lambda b:lambda x:x*b)(q(f))for o,f in re.findall("([+*]) (o|\d+)",s)]
+o=[(lambda x:x*x)if f=="o"else(lambda b:lambda x:x+b)(q(f))if o=="+"else(lambda b:lambda x:x*b)(q(f))for o,f in a("([+*]) (o|\d+)",s)]
 s=s.split("\n")
-m=[[q(n)for n in re.findall("\d+",m)]for m in s[1::7]]
+m=[[q(n)for n in a("\d+",m)]for m in s[1::7]]
 f=1
 for v in s[3::7]:f*=q(v.split()[-1])
 t=[(lambda d,a,b:lambda x:b if x%d else a)(*[q(l.split()[-1])for l in s[i:i+3]])for i in range(3,len(s),7)]
