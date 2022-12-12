@@ -38,11 +38,13 @@ def heuristic(x, y, goal):
 from heapq import heappush
 from heapq import heappop
 
-def astar(start):
+def astar(starts):
     queue = []
-    heappush(queue, (0, start))
     cost = dict()
-    cost[start] = 0
+
+    for start in starts:
+        heappush(queue, (0, start))
+        cost[start] = 0
 
     while queue:
         __, pos = heappop(queue)
@@ -55,7 +57,6 @@ def astar(start):
                 cost[n] = cost[pos]+1
                 priority = cost[pos]+1 + heuristic(*n, goal)
                 heappush(queue, (priority, n))
-    return 600
 
-print("Part 1:\t", astar(start))
-print("Part 2:\t", min(astar(s) for s in candidates))
+print("Part 1:\t", astar([start]))
+print("Part 2:\t", astar(candidates))
