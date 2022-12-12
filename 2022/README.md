@@ -20,3 +20,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 9: Rope Bridge](09) | ⭐️ | ⭐️ |
 |✔️ [Day 10: Cathode-Ray Tube](10) | ⭐️ | ⭐️ |
 |✔️ [Day 11: Monkey in the Middle](11) | ⭐️ | ⭐️ |
+|✔️ [Day 12: Hill Climbing Algorithm](12) | ⭐️ | ⭐️ |
