@@ -21,3 +21,6 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 10: Cathode-Ray Tube](10) | ⭐️ | ⭐️ |
 |✔️ [Day 11: Monkey in the Middle](11) | ⭐️ | ⭐️ |
 |✔️ [Day 12: Hill Climbing Algorithm](12) | ⭐️ | ⭐️ |
+|✔️ [Day 13: Distress Signal](13) | ⭐️ | ⭐️ |
+|✔️ [Day 14: Regolith Reservoir](14) | ⭐️ | ⭐️ |
+|✔️ [Day 15: Beacon Exclusion Zone](15) | ⭐️ | ⭐️ |
