@@ -24,3 +24,8 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 13: Distress Signal](13) | ⭐️ | ⭐️ |
 |✔️ [Day 14: Regolith Reservoir](14) | ⭐️ | ⭐️ |
 |✔️ [Day 15: Beacon Exclusion Zone](15) | ⭐️ | ⭐️ |
+|Day 16: Proboscidea Volcanium |  |  |
+|✔️ [Day 17: Pyroclastic Flow](17) | ⭐️ | ⭐️ |
+|✔️ [Day 18: Boiling Boulders](18) | ⭐️ | ⭐️ |
+|Day 19: Not Enough Minerals | ⭐️ |  |
+|✔️ [Day 20: Grove Positioning System](20) | ⭐️ | ⭐️ |
