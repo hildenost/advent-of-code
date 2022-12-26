@@ -29,3 +29,8 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 18: Boiling Boulders](18) | ⭐️ | ⭐️ |
 |Day 19: Not Enough Minerals | ⭐️ |  |
 |✔️ [Day 20: Grove Positioning System](20) | ⭐️ | ⭐️ |
+|✔️ [Day 21: Monkey Math](21) | ⭐️ | ⭐️ |
+|✔️ [Day 22: Monkey Map](22) | ⭐️ | ⭐️ |
+|✔️ [Day 23: Unstable Diffusion](23) | ⭐️ | ⭐️ |
+|✔️ [Day 24: Blizzard Basin](24) | ⭐️ | ⭐️ |
+| [Day 25: Full of Hot Air](25) | ⭐️ |  |
