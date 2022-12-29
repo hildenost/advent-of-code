@@ -24,13 +24,13 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 13: Distress Signal](13) | ⭐️ | ⭐️ |
 |✔️ [Day 14: Regolith Reservoir](14) | ⭐️ | ⭐️ |
 |✔️ [Day 15: Beacon Exclusion Zone](15) | ⭐️ | ⭐️ |
-|Day 16: Proboscidea Volcanium |  |  |
+|✔️ [Day 16: Proboscidea Volcanium](16) |⭐️ | ⭐️ |
 |✔️ [Day 17: Pyroclastic Flow](17) | ⭐️ | ⭐️ |
 |✔️ [Day 18: Boiling Boulders](18) | ⭐️ | ⭐️ |
-|Day 19: Not Enough Minerals | ⭐️ |  |
+|✔️ [Day 19: Not Enough Minerals](19) | ⭐️ | ⭐️ |
 |✔️ [Day 20: Grove Positioning System](20) | ⭐️ | ⭐️ |
 |✔️ [Day 21: Monkey Math](21) | ⭐️ | ⭐️ |
 |✔️ [Day 22: Monkey Map](22) | ⭐️ | ⭐️ |
 |✔️ [Day 23: Unstable Diffusion](23) | ⭐️ | ⭐️ |
 |✔️ [Day 24: Blizzard Basin](24) | ⭐️ | ⭐️ |
-| [Day 25: Full of Hot Air](25) | ⭐️ |  |
+|✔️ [Day 25: Full of Hot Air](25) | ⭐️ | ⭐️ |
