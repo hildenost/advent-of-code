@@ -1,87 +1,59 @@
 """ Advent of Code 2019. Day 18: Many-Worlds Interpretation """
 
-# Walks like astar, talks like astar
-
-sample = """########
-#b.A.@.a#
-#########
-"""
-sample = """########################
-#f.D.E.e.C.b.A.@.a.B.c.#
-######################.#
-#d.....................#
-########################
-"""
-sample = """########################
-#...............b.C.D.f#
-#.######################
-#.....@.a.B.c.d.A.e.F.g#
-########################
-"""
-
-sample = """#################
-#i.G..c...e..H.p#
-########.########
-#j.A..b...f..D.o#
-########@########
-#k.E..a...g..B.n#
-########.########
-#l.F..d...h..C.m#
-#################
-"""
-
-sample = """########################
-#@..............ac.GI.b#
-###d#e#f################
-###A#B#C################
-###g#h#i################
-########################
-"""
-
 with open("input.txt") as f:
-    sample = f.read()
+    maze = f.read()
 
 # Gonna represent the walls in a set
 # So easy to check whether tile is wall or not
 # In addition, keeping a dict of position of doors
-# Removing the door positions from the wall set as they are unlocked
 
 # Initialisation
 WALLS = set()
-doors = {}
 DOORS = {}
 KEYS = {}
 invkeys = {}
-for i, row in enumerate(sample.splitlines()):
+for i, row in enumerate(maze.splitlines()):
     for j, tile in enumerate(row):
         if tile == "#":
             WALLS.add((i, j))
         elif tile.isupper():
-            doors[tile] = (i, j)
             DOORS[(i, j)] = tile
         elif tile.islower():
             KEYS[(i, j)] = tile 
             invkeys[tile] = (i, j)
         elif tile == "@":
-            pos = (i, j)
+            poses = ((i, j),)
 
+            # Part 2
+            """
+            Replacing
+            ...    @#@
+            .@. -> ### 
+            ...    @#@
+            """
+            poses_2 = tuple(
+                (i+di, j+dj)
+                for di, dj in [(1, 1), (1, -1), (-1, 1), (-1, -1)]
+            )
+            EXTRAWALLS = {
+                (i+di, j+dj)
+                for di, dj in [(0, 0), (0, 1), (0, -1), (-1, 0), (1, 0)]
+            }
 
-# Just doing a naive bfs
 keys = "".join(sorted(KEYS.values()))
-doorses = "".join(sorted(DOORS.values()))
 
 from heapq import heappush
 from heapq import heappop
 
-def bfs(start, locked_doors="", sorted_verts=""):
-
+# Just doing a naive bfs for finding accessible keys
+def bfs(start, sorted_verts="", part=1):
     visited = set()
     queue = [(0, start)]
 
     cost = {}
 
     while queue:
-        c, pos = heappop(queue)
+        c, pos = queue.pop(0)
         if pos in visited:
             continue
 
@@ -93,8 +65,12 @@ def bfs(start, locked_doors="", sorted_verts=""):
             if new_pos in visited:
                 continue
             # If deadend
-            if new_pos in WALLS or DOORS.get(new_pos, "Ø") in locked_doors:
+            if new_pos in WALLS or DOORS.get(new_pos, "Ø").lower() in sorted_verts:
                 continue
+
+            if part == 2 and new_pos in EXTRAWALLS:
+                continue
+
             # If key, add cost to key, but skip the rest
             if KEYS.get(new_pos, "ø") in sorted_verts:
                 cost[KEYS[new_pos]] = c + 1
@@ -103,43 +79,42 @@ def bfs(start, locked_doors="", sorted_verts=""):
             queue.append((c+1, new_pos))
     return cost
 
-
-def keysearch(keys, doorses, start):
+def keysearch(keys, starts, part=1):
     # A state should contain the vertices left, the unlocked doors
-    # (cost, vertices, locked_doors)
+    # (cost, keys, poses)
     queue = []
-    heappush(queue, (0, keys, doorses, start))
-    visited = {} 
+    heappush(queue, (0, keys, starts))
+    visited = set()
 
-    i = 0
     while queue:
-        i+=1
-        cost, vertices, locked_doors, pos = heappop(queue)
+        cost, vertices, poses = heappop(queue)
         
-        if i % 1000 == 0:
-            print(cost, len(visited), len(queue), vertices, locked_doors)
-
-        state = (vertices, locked_doors, pos)
+        state = (vertices, poses)
 
         if state in visited:
             continue
 
-        visited[state] = cost
+        visited.add(state)
 
         if len(vertices) == 0:
+            print(f"Explored {len(visited)} nodes")
             return cost
 
         # let's find the reachable keys from pos
-        dists = bfs(pos, locked_doors, vertices)
+        dists = [bfs(pos, vertices, part) for pos in poses]
 
-        for v in dists:
-            # Opening doors 
-            state = (vertices.replace(v, ""), locked_doors.replace(v.upper(), ""), invkeys[v])
+        for i, dist in enumerate(dists):
+            for v in dist:
+                # Opening doors and updating pos
+                new_poses = poses[:i] + (invkeys[v],) + poses[i+1:]
+                state = (vertices.replace(v, ""), new_poses)
 
-            if state in visited:
-                continue
+                if state in visited:
+                    continue
 
-            # If we visit this key first, let's add to queue
-            heappush(queue, (cost + dists[v], *state))
+                # If we visit this key first, let's add to queue
+                heappush(queue, (cost + dist[v], *state))
 
-print("Part 1:\t", keysearch(keys, doorses, pos))
+print("Part 1:\t", keysearch(keys, tuple(poses)))
+print("Part 2:\t", keysearch(keys, tuple(poses_2), part=2))
+
