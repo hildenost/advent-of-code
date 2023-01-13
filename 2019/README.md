@@ -29,4 +29,5 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 |✔️ [Day 18: Many-Worlds Interpretation](18)  |⭐️ | ⭐️|
 |✔️ [Day 19: Tractor Beam](19)   | ⭐️ | ⭐️|
 |✔️ [Day 20: Donut Maze](20)   | ⭐️ |⭐️|
+|✔️ [Day 21: Springdroid Adventure](21)   | ⭐️ |⭐️|
 
