@@ -33,5 +33,6 @@ Each day can grant you 2 stars if both puzzles are solved. (And also some points
 | Day 22: Slam Shuffle   | ⭐️ ||
 | Day 23: Category Six   | ⭐️ ||
 |✔️ [Day 24: Planet of Discord](24)   | ⭐️ |⭐️|
-| Day 25: Cryostasis   |  ||
+|✔️ [Day 25: Cryostasis](25)   | ⭐️ ||
+
 
