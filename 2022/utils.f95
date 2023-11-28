@@ -38,6 +38,7 @@ contains
         read(io, *, iostat=iostat)
         if (is_iostat_end(iostat)) exit
         length = length + 1
+        print *, length
     end do
     ! Now we can allocate our file contents array
     allocate(content(i, length))
