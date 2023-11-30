@@ -6,58 +6,7 @@ from intcode import run
 with open("input.txt") as f:
     program = [int(n) for n in f.read().split(",")]
 
-
-# prog = run(program + [0] * 100)
-#
-# print(next(prog))
-# print(prog.send(0))
-# print(prog.send(-1))
-
 from collections import defaultdict
-
-packets = defaultdict(list)
-
-
-def process(nic, address):
-    # Check for packets
-    if not packets[address]:
-        # IDLE
-        got_packets = False
-        output = nic.send(-1)
-    else:
-        # Packets! Yay!
-        got_packets = True
-        while packets[address]:
-            X, Y = packets[address].pop(0)
-            nic.send(X)
-            output = nic.send(Y)
-
-    if output is None:
-        # No packages output
-        return nic, not got_packets
-
-    # Packages to send
-    destination = output
-
-    while destination is not None:
-        X = next(nic)
-        Y = next(nic)
-        print(f"From {address} send to {destination} package {X=}, {Y=}")
-
-        if destination == 255:
-            # print("Part 1:\t", Y)
-            print("Writing to 255 from ", address, X, Y)
-            print(packets[destination])
-            packets[destination] = (X, Y)
-            print(packets[destination])
-        else:
-            packets[destination].append((X, Y))
-
-        destination = next(nic)
-    else:
-        nic.send(-1)
-
-    return nic, False
 
 
 def init_nic(i):
@@ -70,22 +19,55 @@ def init_nic(i):
 # Initialize network
 nics = [init_nic(i) for i in range(50)]
 
+NAT = (0, 0)
 prev = None
+part1 = False
+packets = defaultdict(list)
 
-# Start network
 while True:
-    nics, is_idle = zip(*[process(nic, i) for i, nic in enumerate(nics)])
+    for address, nic in enumerate(nics):
+        # Check for packets
+        if not packets[address]:
+            # IDLE
+            output = nic.send(-1)
+        else:
+            # Packets! Yay!
+            X, Y = packets[address].pop(0)
+            nic.send(X)
+            output = nic.send(Y)
 
-    if all(is_idle):
-        print("ALL IDLE")
-        X, Y = packets[255]
-        print("SENDING ", Y, " TO 0")
+        if output is None:
+            # No packages output
+            if not any(packets.values()):
+                X, Y = NAT
+                if prev == Y and prev is not None:
+                    print("Part 2:\t", Y)
+                    exit()
+                prev = Y
 
-        if prev == Y and prev is not None:
-            print("TWICE IN ROW!")
-            print(prev, Y)
-            exit()
+                packets[0].append((X, Y))
+                # Just breaking to start at 0 again
+                # Saving some time
+                break
 
-        prev = Y
+            continue
 
-        packets[0].append((X, Y))
+        # Packages to send
+        destination = output
+
+        while destination is not None:
+            X = next(nic)
+            Y = next(nic)
+
+            if destination == 255:
+                if not part1:
+                    print("Part 1:\t", Y)
+                    part1 = True
+
+                NAT = (X, Y)
+            else:
+                packets[destination].append((X, Y))
+
+            destination = next(nic)
+        else:
+            nic.send(-1)
