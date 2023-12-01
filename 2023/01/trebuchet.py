@@ -2,38 +2,24 @@
 import re
 
 with open("input.txt") as f:
-    calibration = f.read().splitlines()
+    calibrations = f.read()
 
-DIGITS = [
-    "zero",
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-]
+digits = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 
-reverse = [d[::-1] for d in DIGITS]
+pattern = f"(?=({'|'.join(digits)}))"
 
-pattern = r"\d|" + "|".join(DIGITS)
-revpattern = r"\d|" + "|".join(reverse)
+def add_digit(m):
+    """In wordy number, insert the digit and the last letter of word"""
+    return str(digits.index(m[1])) + m[1][-1]
 
-answer = 0
-for line in calibration:
-    pattern = r"\d|" + "|".join(DIGITS)
-    digits = re.findall(pattern, line)
-    first = digits[0]
-    last = re.findall(revpattern, line[::-1])[0]
+def calibrate(calibrations, part=1):
+    if part == 2:
+        calibrations = re.sub(pattern, add_digit, calibrations)
+    
+    # Remove characters that are not a digit, keep newlines
+    numbers = re.sub("[a-z]", "", calibrations)
 
-    if first in DIGITS:
-        first = str(DIGITS.index(first))
-    if last in reverse:
-        last = str(reverse.index(last))
+    return sum(int(number[0] + number[-1]) for number in numbers.splitlines())
 
-    answer += int(str(first) + str(last))
-
-print(answer)
+print("Part 1:\t", calibrate(calibrations))
+print("Part 2:\t", calibrate(calibrations, part=2))
