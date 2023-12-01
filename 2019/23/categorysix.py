@@ -26,35 +26,31 @@ packets = defaultdict(list)
 
 while True:
     for address, nic in enumerate(nics):
-        # Check for packets
-        if not packets[address]:
-            # IDLE
-            output = nic.send(-1)
-        else:
+        # RECEIVE packets
+        if packets[address]:
             # Packets! Yay!
             X, Y = packets[address].pop(0)
             nic.send(X)
-            output = nic.send(Y)
+            destination = nic.send(Y)
+        else:
+            # IDLE
+            destination = nic.send(-1)
 
-        if output is None:
-            # No packages output
-            if not any(packets.values()):
-                X, Y = NAT
-                if prev == Y and prev is not None:
-                    print("Part 2:\t", Y)
-                    exit()
-                prev = Y
+        if destination is None and not any(packets.values()):
+            # The last package becoming idle
+            # Meaning entire system is idle
 
-                packets[0].append((X, Y))
-                # Just breaking to start at 0 again
-                # Saving some time
-                break
+            # Same Y value as last time
+            if prev == NAT[1]:
+                print("Part 2:\t", NAT[1])
+                exit()
 
-            continue
+            # Send package from NAT to address 0
+            packets[0].append(NAT)
 
-        # Packages to send
-        destination = output
+            prev = NAT[1]
 
+        # There are packages to send
         while destination is not None:
             X = next(nic)
             Y = next(nic)
@@ -69,5 +65,3 @@ while True:
                 packets[destination].append((X, Y))
 
             destination = next(nic)
-        else:
-            nic.send(-1)
