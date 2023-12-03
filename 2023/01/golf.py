@@ -1,4 +1,5 @@
-import re
-l=open("a").read()
-n=["_","one","two","three","four","five","six","seven","eight","nine"]
-print([sum(int(g[0]+g[-1])for g in[re.sub("\D","",c)for c in p.split("\n")])for p in(l,re.sub("(?=("+"|".join(n)+"))",lambda m:str(n.index(m[1]))+m[1][-1],l))])
+f = open("a").read()
+for i, t in enumerate("one two three four five six seven eight nine".split(), 1):
+    f = f.replace(t, t + str(i) + t)
+for m in (open("a"), f.splitlines()):
+    print(sum(int(d[0] + d[-1]) for d in ([c for c in j if c.isdigit()] for j in m)))
