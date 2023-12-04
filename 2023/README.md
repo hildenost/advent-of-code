@@ -12,3 +12,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 1: Trebuchet?!](01) | ⭐️ | ⭐️ |
 |✔️ [Day 2: Cube Conundrum](02) | ⭐️ | ⭐️ |
 |✔️ [Day 3: Gear Ratios](03) | ⭐️ | ⭐️ |
+|✔️ [Day 4: Scratchcards](04) | ⭐️ | ⭐️ |
