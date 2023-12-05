@@ -3,7 +3,7 @@
 
 import re
 
-with open("test_input.txt") as f:
+with open("input.txt") as f:
     (
         seeds,
         *instr,
@@ -45,6 +45,10 @@ for seed in seeds:
     locs.append(v)
 print("Part 1:\t", min(locs))
 
+import time
+
+start = time.time()
+
 
 def find_value(value, n, dest, source, length):
     # Check if value and value + n falls within the source range
@@ -65,43 +69,39 @@ def find_value(value, n, dest, source, length):
 
 locs = []
 for seed, span in zip(seeds[::2], seeds[1::2]):
-    print("==== SEED and RANGE ", seed, span)
     ranges = {(seed, span)}
     for mapping in instr:
         new_ranges = set()
-        print()
-        print()
-        print()
-        print(ranges)
         for v, n in ranges:
             leftovers = []
             subranges = set()
             for line in mapping:
                 new_v, new_n, left, right = find_value(v, n, *line)
-                print(new_v, new_n, left, right)
                 if new_n == n:
                     subranges.add((new_v, new_n))
                 elif new_n != n and new_n > 0:
-                    leftovers.append((max(v, left), min(right, v + n)))
+                    if right == v + n:
+                        leftovers.append((v, left - v))
+                    elif left == v:
+                        leftovers.append((right, v + n - right))
+                    else:
+                        leftovers.append((right, v + n - right))
+                        leftovers.append((v, left - v))
+
                     subranges.add((new_v, new_n))
                 else:
                     subranges.add((new_v, new_n))
-            print(leftovers)
             subranges.discard((0, 0))
             if subranges:
                 new_span = sum(b for a, b in subranges)
-                print("NEW SPAN: ", new_span)
-                print("Input ranges: ", (v, n))
-                print("Output ranges: ", subranges)
+                if new_span != n:
+                    subranges = subranges.union(set(leftovers))
                 new_ranges = new_ranges.union(subranges)
-                print(new_ranges)
             else:
-                print("NO NEW RANGES!!!!")
-                print((v, n))
                 new_ranges.add((v, n))
         ranges = new_ranges
-    print(seed, span, ranges)
-    print()
-
+    v = min(a for a, b in ranges)
     locs.append(v)
-    break
+print(min(locs))
+end = time.time()
+print(end - start)
