@@ -26,15 +26,7 @@ steps = [traverse(node, end="Z") for node in nodes if node.endswith("A")]
 
 from math import gcd
 
-
-def list_gcd(lst):
-    res = gcd(*lst[:2])
-    for x in lst[2:]:
-        res = gcd(res, x)
-    return res
-
-
-g = list_gcd(steps)
+g = gcd(*steps)
 
 # Multiply the primes together
 primes = 1
