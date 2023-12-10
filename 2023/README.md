@@ -18,3 +18,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 7: Camel Cards](07) | ⭐️ | ⭐️ |
 |✔️ [Day 8: Haunted Wasteland](08) | ⭐️ | ⭐️ |
 |✔️ [Day 9: Mirage Maintenance](09) | ⭐️ | ⭐️ |
+|✔️ [Day 10: Pipe Maze](10) | ⭐️ | ⭐️ |
