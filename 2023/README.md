@@ -20,3 +20,4 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 9: Mirage Maintenance](09) | ⭐️ | ⭐️ |
 |✔️ [Day 10: Pipe Maze](10) | ⭐️ | ⭐️ |
 |✔️ [Day 11: Cosmic Expansion](11) | ⭐️ | ⭐️ |
+|✔️ [Day 12: Hot Springs](12) | ⭐️ | ⭐️ |

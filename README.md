@@ -10,8 +10,8 @@ Each year can grant you a maximum of 50 stars. I'll try to get them all!
 
 |  Year |Stars |
 |------:|---:|
-| 🏗 [2023](2023) | 22⭐️ ![Progress](https://progress-bar.dev/22/?scale=50&suffix=⭐️)|
-| ✔️ [2022](2022) | 50⭐️ ![Progress](https://progress-bar.dev/50/?scale=50&suffix=⭐️)|
+| 🏗 [2023](2023) | 24⭐️ ![Progress](https://progress-bar.dev/24/?scale=50&suffix=⭐️)|
+| ✔️ [2024](2024) | 50⭐️ ![Progress](https://progress-bar.dev/50/?scale=50&suffix=⭐️)|
 | ✔️ [2021](2021) | 50⭐️ ![Progress](https://progress-bar.dev/50/?scale=50&suffix=⭐️)|
 | ✔️ [2020](2020) | 50⭐️ ![Progress](https://progress-bar.dev/50/?scale=50&suffix=⭐️)|
 | ✔️ [2019](2019) | 50⭐️ ![Progress](https://progress-bar.dev/50/?scale=50&suffix=⭐️)|
@@ -19,4 +19,4 @@ Each year can grant you a maximum of 50 stars. I'll try to get them all!
 | ✔️ [2017](2017) | 50⭐️ ![Progress](https://progress-bar.dev/50/?scale=50&suffix=⭐️)|
 | ✔️ [2016](2016) | 50⭐️ ![Progress](https://progress-bar.dev/50/?scale=50&suffix=⭐️) | 
 | ✔️ [2015](2015) | 50⭐️  ![Progress](https://progress-bar.dev/50/?scale=50&suffix=⭐️)  |
-|**total** | 422⭐️ ![Progress](https://progress-bar.dev/422/?scale=450&suffix=⭐️)|
+|**total** | 424⭐️ ![Progress](https://progress-bar.dev/424/?scale=450&suffix=⭐️)|
