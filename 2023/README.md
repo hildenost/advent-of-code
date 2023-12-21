@@ -21,3 +21,13 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 10: Pipe Maze](10) | ⭐️ | ⭐️ |
 |✔️ [Day 11: Cosmic Expansion](11) | ⭐️ | ⭐️ |
 |✔️ [Day 12: Hot Springs](12) | ⭐️ | ⭐️ |
+|✔️ [Day 13: Point of Incidence](13) | ⭐️ | ⭐️ |
+|✔️ [Day 14: Parabolic Reflector Dish](14) | ⭐️ | ⭐️ |
+|✔️ [Day 15: Lens Library](15) | ⭐️ | ⭐️ |
+|✔️ [Day 16: The Floor Will Be Lava](16) | ⭐️ | ⭐️ |
+|✔️ [Day 17: Clumsy Crucible](17) | ⭐️ | ⭐️ |
+|✔️ [Day 18: Lavaduct Lagoon](18) | ⭐️ | ⭐️ |
+|✔️ [Day 19: Aplenty](19) | ⭐️ | ⭐️ |
+|✔️ [Day 20: Pulse Propagation](10) | ⭐️ | ⭐️ |
+|✔️ [Day 21: Step Counter](21) | ⭐️ | ⭐️ |
+
