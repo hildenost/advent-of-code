@@ -95,6 +95,8 @@ congruences.
 
 So, lets' do that first, find the suggestions for the velocities of our stone in all three directions.
 
+Turned out, Chinese remainder theorem wasn't needed after all.
+
 For my input, there were only 1 velocity suggestion per direction. There was also only 1 possible y position.
 However, I decided to obfuscate my code a bit to solve in the case of multiple options, such as the test input.
 """
@@ -150,24 +152,6 @@ def find_divisors(n):
         last_prime = prime
 
     return divisors
-
-
-def extended_euclidean(a, b):
-    """Solves the Bézout's identity ax + by = gcd(a, b)"""
-    a, b = max(a, b), min(a, b)
-
-    x = 1
-    y = 0
-
-    x1, y1, a1, b1 = 0, 1, a, b
-    while b1:
-        q = a1 // b1
-        x, x1 = x1, x - q * x1
-        y, y1 = y1, y - q * y1
-        a1, b1 = b1, a1 - q * b1
-
-    # x, y are the solution of Bézout's identity
-    return x, y
 
 
 def find_vs(a, b):
