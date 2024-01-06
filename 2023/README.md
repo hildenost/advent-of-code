@@ -30,4 +30,8 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 19: Aplenty](19) | ⭐️ | ⭐️ |
 |✔️ [Day 20: Pulse Propagation](10) | ⭐️ | ⭐️ |
 |✔️ [Day 21: Step Counter](21) | ⭐️ | ⭐️ |
+|✔️ [Day 22: Sand Slabs](22) | ⭐️ | ⭐️ |
+|✔️ [Day 23: A Long Walk](23) | ⭐️ | ⭐️ |
+|✔️ [Day 24: Never Tell Me The Odds](24) | ⭐️ | ⭐️ |
+|✔️ [Day 25: Snowverload](25) | ⭐️ | ⭐️ |
 
