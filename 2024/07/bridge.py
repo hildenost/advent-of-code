@@ -12,28 +12,22 @@ ops = {
 
 from itertools import product
 
-total_sum = 0
-for value, first, *numbers in equations:
-    for combos in product("*+", repeat=len(numbers)):
-        total = first
-        for n, op in zip(numbers, combos):
-            total = ops[op](total, n)
-            if total > value:
-                continue
-        if total == value:
-            total_sum += value
-            break
-print("Part 1:\t", total_sum)
 
-total_sum = 0
-for value, first, *numbers in equations:
-    for combos in product("*+|", repeat=len(numbers)):
-        total = first
-        for n, op in zip(numbers, combos):
-            total = ops[op](total, n)
-            if total > value:
-                continue
-        if total == value:
-            total_sum += value
-            break
-print("Part 2:\t", total_sum)
+def calibrate(valid_ops="*+"):
+    total_sum = 0
+    for value, first, *numbers in equations:
+        for combos in product(valid_ops, repeat=len(numbers)):
+            total = first
+            for n, op in zip(numbers, combos):
+                total = ops[op](total, n)
+                # Down the wrong path, abort
+                if total > value:
+                    continue
+            if total == value:
+                total_sum += value
+                break
+    return total_sum
+
+
+print("Part 1:\t", calibrate("*+"))
+print("Part 2:\t", calibrate("*+|"))
