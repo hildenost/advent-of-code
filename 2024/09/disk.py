@@ -26,40 +26,40 @@ blocks = [int(block) for block in diskmap[::2]]
 spaces = [int(space) for space in diskmap[1::2]]
 
 
-# left = 0
-# right = maxID(diskmap)
-#
-# res = [left] * blocks[left]
-# blocks[left] = 0
-# for space in spaces:
-#    n = space
-#    while n and left < right:
-#        # Place so many blocks we can
-#        if blocks[right] < n:
-#            # Place all
-#            res.extend([right] * blocks[right])
-#            # Remove them
-#            n -= blocks[right]
-#            blocks[right] = 0
-#            # And move to next
-#            right -= 1
-#        else:
-#            # Place a few
-#            res.extend([right] * n)
-#            # Remove them
-#            blocks[right] -= n
-#            n = 0
-#    if not n:
-#        # No space, adding the next fileblock before moving on
-#        left += 1
-#        res.extend([left] * blocks[left])
-#        blocks[left] = 0
-# print(checksum(res))
+left = 0
+right = maxID(diskmap)
+
+res = [left] * blocks[left]
+blocks[left] = 0
+for space in spaces:
+    n = space
+    while n and left < right:
+        # Place so many blocks we can
+        if blocks[right] < n:
+            # Place all
+            res.extend([right] * blocks[right])
+            # Remove them
+            n -= blocks[right]
+            blocks[right] = 0
+            # And move to next
+            right -= 1
+        else:
+            # Place a few
+            res.extend([right] * n)
+            # Remove them
+            blocks[right] -= n
+            n = 0
+    if not n:
+        # No space, adding the next fileblock before moving on
+        left += 1
+        res.extend([left] * blocks[left])
+        blocks[left] = 0
+print("Part 1:\t", checksum(res))
 
 
-# Skal vi lage et nøstehelvete?
-# [[0 0], [None, None, None], [1, 1, 1]]?
-# Og ha et kart over lengdene?
+# Tidkrevende del 2, ca 37 s
+blocks = [int(block) for block in diskmap[::2]]
+spaces = [int(space) for space in diskmap[1::2]]
 
 disk = [blocks[0] * [0]]
 for i, (space, block) in enumerate(zip(spaces, blocks[1:]), 1):
@@ -74,51 +74,48 @@ addresses = {n[0]: i for i, n in enumerate(disk) if n[0] is not None}
 p = maxID(diskmap)
 
 while p >= 0:
-    # print("Disk ID:\t", p)
     # Located disk ID
     a = addresses[p]
     selected = disk[a]
 
     # Searching available space
     for i in range(a):
-        if disk[i] and disk[i][0] is not None:
+        if disk[i][0] is not None:
             continue
 
-        if sizes[a] <= sizes[i]:
-            if sizes[a] == sizes[i]:
-                disk = (
-                    disk[:i]
-                    + [selected]
-                    + disk[i + 1 : a]
-                    + [[None] * sizes[a]]
-                    + disk[a + 1 :]
-                )
+        if sizes[a] > sizes[i]:
+            # Not enough room here, moving on
+            continue
 
-                sizes = [len(n) for n in disk]
-            else:
-                disk = (
-                    disk[:i]
-                    + [selected]
-                    + [[None] * (sizes[i] - sizes[a])]
-                    + disk[i + 1 : a]
-                    + [[None] * sizes[a]]
-                    + disk[a + 1 :]
-                )
-                sizes = [len(n) for n in disk]
-            addresses = {n[0]: i for i, n in enumerate(disk) if n[0] is not None}
-            # update block id
-            p -= 1
-            break
-    else:
-        # Did not move
-        # update block id
-        p -= 1
+        # Just perfect size
+        if sizes[a] == sizes[i]:
+            disk = (
+                disk[:i]
+                + [selected]
+                + disk[i + 1 : a]
+                + [[None] * sizes[a]]
+                + disk[a + 1 :]
+            )
+
+            sizes = [len(n) for n in disk]
+        else:
+            disk = (
+                disk[:i]
+                + [selected]
+                + [[None] * (sizes[i] - sizes[a])]
+                + disk[i + 1 : a]
+                + [[None] * sizes[a]]
+                + disk[a + 1 :]
+            )
+            sizes = [len(n) for n in disk]
+        addresses = {n[0]: i for i, n in enumerate(disk) if n[0] is not None}
+        break
+    # update block id
+    p -= 1
 
 
 def flatten(disk):
     return [b for block in disk for b in block]
 
 
-# print(disk)
-print(checksum(flatten(disk)))
-print(timeit.default_timer() - start_time)
+print("Part 2:\t", checksum(flatten(disk)))
