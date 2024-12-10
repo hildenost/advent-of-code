@@ -11,13 +11,13 @@ Each year can grant you a maximum of 50 stars. I'll try to get them all!
 |  Year |Stars |
 |------:|---:|
 | 🏗 [2024](2024) | 20⭐️ ![Progress](https://progress-bar.xyz/20/?scale=50&suffix=⭐️&show_text=false)|
-| ✔️ [2023](2023) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️)|
-| ✔️ [2022](2022) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️)|
-| ✔️ [2021](2021) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️)|
-| ✔️ [2020](2020) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️)|
-| ✔️ [2019](2019) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️)|
-| ✔️ [2018](2018) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️)|
-| ✔️ [2017](2017) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️)|
-| ✔️ [2016](2016) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️) | 
-| ✔️ [2015](2015) | 50⭐️  ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️)  |
-|**total** | 470⭐️ ![Progress](https://progress-bar.xyz/470/?scale=500&suffix=⭐️)|
+| ✔️ [2023](2023) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)|
+| ✔️ [2022](2022) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)|
+| ✔️ [2021](2021) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)|
+| ✔️ [2020](2020) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)|
+| ✔️ [2019](2019) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)|
+| ✔️ [2018](2018) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)|
+| ✔️ [2017](2017) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)|
+| ✔️ [2016](2016) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false) | 
+| ✔️ [2015](2015) | 50⭐️  ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)  |
+|**total** | 470⭐️ ![Progress](https://progress-bar.xyz/470/?scale=500&suffix=⭐️&show_text=false)|
