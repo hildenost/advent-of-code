@@ -20,4 +20,6 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 9: Disk Fragmenter](09) | ⭐️ | ⭐️ |
 |✔️ [Day 10: Hoof It](10) | ⭐️ | ⭐️ |
 |✔️ [Day 11: Plutonian Pebbles](11) | ⭐️ | ⭐️ |
+|✔️ [Day 12: Garden Groups](12) | ⭐️ | ⭐️ |
+|✔️ [Day 13: Claw Contraption](13) | ⭐️ | ⭐️ |
 
