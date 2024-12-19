@@ -26,44 +26,8 @@ designs = designs.splitlines()
 
 cache = {}
 
-for towel in towels:
-    cache[towel] = True
-
 
 def search(word):
-    if cache.get(word) is not None:
-        return cache[word]
-
-    if len(word) == 1:
-        cache[word] = False
-        return cache[word]
-
-    # Split search
-    for p in range(1, len(word)):
-        left = search(word[:p])
-        if not left:
-            continue
-
-        right = search(word[p:])
-        if not right:
-            continue
-
-        # Both values found
-        cache[word] = True
-        break
-    else:
-        cache[word] = False
-
-    return cache[word]
-
-
-total = 0
-for design in designs:
-    total += search(design)
-print("Part 1:\t", total)
-
-
-def search2(word):
     if cache.get(word) is not None:
         return cache[word]
 
@@ -77,7 +41,7 @@ def search2(word):
         if word[:p] not in towels:
             continue
 
-        right = search2(word[p:])
+        right = search(word[p:])
         if not right:
             continue
 
@@ -91,7 +55,6 @@ def search2(word):
 
 # Create initial cache of towels
 # Check the multiletter towels whether they can be decomposed
-cache = {}
 
 for towel in sorted(towels, key=len):
     cache[towel] = 1
@@ -100,15 +63,18 @@ for towel in sorted(towels, key=len):
         if towel[:p] not in towels:
             continue
 
-        right = search2(towel[p:])
+        right = search(towel[p:])
         if not right:
             continue
 
         # Both values found
         cache[towel] += right
 
-total = 0
+total_ways = 0
+count_valid = 0
 for design in designs:
-    res = search2(design)
-    total += res
-print("Part 2:\t", total)
+    res = search(design)
+    total_ways += res
+    count_valid += res > 0
+print("Part 1:\t", count_valid)
+print("Part 2:\t", total_ways)
