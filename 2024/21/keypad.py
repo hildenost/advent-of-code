@@ -45,14 +45,9 @@ def get_sequence(code, depth=3):
     return cmd
 
 
-tot = 0
 # codes = ["029A", "980A", "179A", "456A", "379A"]
-for code in codes:
-    length = get_sequence(code, depth=3)
-    tot += length * int(code[:-1])
-print("Part 1:\t", tot)
+ans = sum(get_sequence(code, depth=3) * int(code[:-1]) for code in codes)
+print("Part 1:\t", ans)
 
-for code in codes:
-    length = get_sequence(code, depth=26)
-    tot += length * int(code[:-1])
-print("Part 2:\t", tot)
+ans = sum(get_sequence(code, depth=26) * int(code[:-1]) for code in codes)
+print("Part 2:\t", ans)
