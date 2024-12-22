@@ -29,6 +29,6 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 18: RAM Run](18) | ⭐️ | ⭐️ |
 |✔️ [Day 19: Linen Layout](19) | ⭐️ | ⭐️ |
 |✔️ [Day 20: Race Condition](20) | ⭐️ | ⭐️ |
-|✔️ Day 21: Claw Contraption |  |  |
+|✔️ [Day 21: Claw Contraption](21) |  ⭐️ | ⭐️ |
 |✔️ [Day 22: Monkey Market](22) | ⭐️ | ⭐️ |
 
