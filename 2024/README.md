@@ -22,4 +22,13 @@ Each day can grant you 2 stars if both puzzles are solved.
 |✔️ [Day 11: Plutonian Pebbles](11) | ⭐️ | ⭐️ |
 |✔️ [Day 12: Garden Groups](12) | ⭐️ | ⭐️ |
 |✔️ [Day 13: Claw Contraption](13) | ⭐️ | ⭐️ |
+|✔️ [Day 14: Restroom Redoubt](14) | ⭐️ | ⭐️ |
+|✔️ [Day 15: Warehouse Woes](15) | ⭐️ | ⭐️ |
+|✔️ Day 16: Reindeer Maze | ⭐️ | |
+|✔️ [Day 17: Chronospatial Computer](17) | ⭐️ | ⭐️ |
+|✔️ [Day 18: RAM Run](18) | ⭐️ | ⭐️ |
+|✔️ [Day 19: Linen Layout](19) | ⭐️ | ⭐️ |
+|✔️ [Day 20: Race Condition](20) | ⭐️ | ⭐️ |
+|✔️ Day 21: Claw Contraption |  |  |
+|✔️ [Day 22: Monkey Market](22) | ⭐️ | ⭐️ |
 
