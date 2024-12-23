@@ -52,21 +52,18 @@ for i, v in interconnections.items():
     for b in v:
         intersect = (v - {b}) & interconnections[b]
 
-        for c in intersect:
-            if i.startswith("t"):
-                threes.add(frozenset((i, b, c)))
+        if i.startswith("t"):
+            threes.update({frozenset((i, b, c)) for c in intersect})
 
         if intersect:
             alls.add(frozenset((i, b)) | intersect)
 print("Part 1:\t", len(threes))
 
-# Need to do some housekeeping in alls
-passwords = []
-for a in alls:
-    is_all = True
-    for b in a:
-        intersect = (a - {b}) & interconnections[b]
-        is_all = is_all and (intersect == (a - {b}))
-    if is_all:
-        passwords.append(",".join(sorted(a)))
+# Add to possible passwords if
+# the group set minus the computer is a subset of that computer's
+# network list
+passwords = [
+    ",".join(sorted(a)) for a in alls if all(a - {b} <= interconnections[b] for b in a)
+]
+
 print("Part 2:\t", max(passwords, key=len))
