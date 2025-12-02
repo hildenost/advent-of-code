@@ -42,12 +42,9 @@ for id in ids:
             idsum += potential_fake
 print("Part 1:\t", idsum)
 
-
-idsum = 0
-
 fakes = set()
+idsum = 0
 for id in ids:
-    print(f"======{id}=====")
     lower, upper = id.strip().split("-")
 
     # The limit with even number of digits
@@ -57,49 +54,16 @@ for id in ids:
     else:
         id_len = len(lower) // 2
 
-    a = int(lower[:-id_len]) if id_len < len(lower) else 0
-    b = int(upper[:-id_len])
-
+    a = int(lower) // (10**id_len)
+    b = int(upper) // (10**id_len)
     l, u = int(lower), int(upper)
 
-    for n in range(a, b+1):
-        # Constructing a potential fake
-        potential_fake = int(str(n)+str(n))
-        # If within range, label as fake
-        if l <= potential_fake <= u:
-            fakes.add(potential_fake)
-
-        if len(str(n)) == 1:
-            i = 1
-            x, y = len(lower) // i, len(upper) // i
-            
-            # In this case, if the potential fake has length 1,
-            # it is not a fake
-
-            potential_fake = int(x*str(n)[:i])
-            if x > 1 and l <= potential_fake <= u:
-                print("Fake: \t", potential_fake)
-                fakes.add(potential_fake)
-            if x != y:
-                potential_fake = int(y*str(n)[:i])
-                if l <= potential_fake <= u:
-                    print("Fake: \t", potential_fake)
-                    fakes.add(potential_fake)
-
-
-        # There can be more fakes
-        for i in range(1, len(str(n))):
-            x, y = len(lower) // i, len(upper) // i
-            potential_fake = int(x*str(n)[:i])
-            if l <= potential_fake <= u:
-                print("Fake: \t", potential_fake)
-                fakes.add(potential_fake)
-            if x != y:
-                potential_fake = int(y*str(n)[:i])
-                if l <= potential_fake <= u:
-                    print("Fake: \t", potential_fake)
-                    fakes.add(potential_fake)
-print(fakes)
+    fakes |= {
+        int(r*str(n)[:i])
+        for n in range(a, b+1)
+        for i in range(1, len(str(n))+1)
+        for r in (len(lower) // i, len(upper) // i)
+        if r > 1 and l <= int(r*str(n)[:i]) <= u
+    }
 
 print("Part 2:\t", sum(fakes))
-
