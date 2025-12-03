@@ -3,17 +3,8 @@
 with open("input.txt") as f:
     batteries = f.read().splitlines()
 
-joltage = 0
-for battery in batteries:
-    for first_digit in "987654321":
-        idx = battery.find(first_digit)
-        if idx in [-1, 99]:
-            # digit not found or digit in last position
-            continue
-        second_digit = max(battery[idx+1:])
-        joltage += int(first_digit + second_digit)
-        break
-print("Part 1:\t", joltage)
+def get_joltage(batteries, n=2):
+    return sum(int(find_largest(n, battery)) for battery in batteries)
 
 def find_largest(n, b):
     if n == 1:
@@ -36,5 +27,5 @@ def find_largest(n, b):
     return find_largest(n-remaining,b[:idx]) + b[idx:]
 
 
-joltage = sum(int(find_largest(12, battery)) for battery in batteries)
-print("Part 2:\t", joltage)
+print("Part 1:\t", get_joltage(batteries,n=2))
+print("Part 2:\t", get_joltage(batteries,n=12))
