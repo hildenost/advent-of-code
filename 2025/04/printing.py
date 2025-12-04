@@ -22,13 +22,14 @@ dirs = [
 
 
 def to_remove(papergrid):
-    candidates = set()
-    neighbours = lambda p: sum((i+di, j+dj) in p for di, dj in dirs)
+    neighbours = lambda i, j: sum((i+di, j+dj) in papergrid for di, dj in dirs)
 
-    for i, j in papergrid:
-        if neighbours(papergrid) < 4:
-            candidates.add((i, j))
-    return candidates
+    return {
+        (i, j)
+        for i, j in papergrid
+        if neighbours(i, j) < 4
+    }
+
 n_paper = len(paper)
 
 candidates = to_remove(paper)
