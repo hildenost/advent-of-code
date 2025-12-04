@@ -30,20 +30,19 @@ def to_remove(papergrid):
         if neighbours(i, j) < 4
     }
 
-n_paper = len(paper)
-
+n_removed = 0
 candidates = to_remove(paper)
 # update paper
 paper -= candidates
-print("Part 1:\t", len(candidates))
+n_removed += len(candidates)
+print("Part 1:\t", n_removed)
 
 while candidates:
     candidates = to_remove(paper)
     # update paper
     paper -= candidates
+    n_removed += len(candidates)
 
-
-n_final = len(paper)
-print("Part 2:\t", n_paper-n_final)
+print("Part 2:\t", n_removed)
 
  
