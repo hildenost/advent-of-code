@@ -9,8 +9,7 @@ program day03
 
     ! Problem related variables
     character(len=256), dimension(:), allocatable :: scanning
-    integer :: n = 2
-    integer(kind=selected_int_kind(16)) :: password
+    integer(kind=selected_int_kind(16)) :: joltage
 
     ! Fortran needs to know how large the array is going to be
     ! before allocating
@@ -28,13 +27,13 @@ program day03
     read(io, *) scanning
     close(io)
 
-    password = sum(max_joltage(scanning, 2))
+    joltage = sum(max_joltage(scanning, 2))
 
-    write (*,*) "Part 1", password
+    write (*,*) "Part 1", joltage
 
-    password = sum(max_joltage(scanning, 12))
+    joltage = sum(max_joltage(scanning, 12))
 
-    write (*,*) "Part 2", password
+    write (*,*) "Part 2", joltage
 
   contains
 
