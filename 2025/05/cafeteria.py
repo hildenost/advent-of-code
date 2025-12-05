@@ -5,12 +5,10 @@ with open("input.txt") as f:
 
 ranges = [tuple(int(n) for n in r.split("-")) for r in ranges.splitlines()]
 
-n_fresh = 0
-for i in ids.splitlines():
-    for l, u in ranges:
-        if l <= int(i) <= u:
-            n_fresh += 1
-            break
+n_fresh = sum(
+    # Using any to avoid double and triple etc counting
+    any(l <= int(i) <= u for l, u in ranges)
+    for i in ids.splitlines())
 print("Part 1:\t", n_fresh)
 
 
