@@ -1,2 +1,8 @@
+# Ignore all
+*
+
+# But not the ones with an extension
+!*.*
+
+# Though we still ignore input
 input.txt
-a
