@@ -2,7 +2,6 @@
 
 with open("input.txt") as f:
     lines = [row.split() for row in f.read().splitlines()]
-print(lines)
 
 example = """\
 [.##.] (3) (1,3) (2) (2,3) (0,2) (0,1) {3,5,4,7}
@@ -10,7 +9,7 @@ example = """\
 [.###.#] (0,1,2,3,4) (0,3,4) (0,1,2,4,5) (1,2) {10,11,11,5,10,5}
 """.splitlines()
 
-#lines = [row.split() for row in example]
+lines = [row.split() for row in example]
 
 def parse_config(config):
     return "".join("0" if i == "." else "1" for i in config.strip('[]'))
@@ -70,7 +69,6 @@ for line in lines:
 
     presses = astar(int(start, 2), int(c, 2), [int(b,2) for b in buttons])
     total_presses += presses
-    print(presses)
 
                 
 print("Part 1:\t", total_presses)
@@ -119,6 +117,123 @@ def astar(start, goal, buttons):
 def parse_button2(b):
     return tuple(int(n) for n in b.strip('()').split(','))
 
+import numpy as np
+
+def simplex(goal, buttons):
+    print(goal)
+    print(buttons)
+    constraints = np.array(goal)
+    Z = 0
+
+    # Need the rows leading to the constraints
+    rows = []
+    for j, __ in enumerate(constraints):
+        rows.append([int(j in b) for b in buttons])
+    for row, c in zip(rows, constraints):
+        print(row, "\t", c)
+
+    rows = np.array(rows)
+
+
+    # We are minimising just the sum of the
+    # xis
+    # We flip the sign
+
+    # Maximise sum(-xi)
+    # Subject to:
+    # rows + identity(len(constraints)) + s_a = constraints
+    # xi >= 0
+
+    tableau = np.hstack((rows, np.identity(len(constraints), dtype=np.int32)))
+    print(tableau)
+
+    objective = np.hstack((
+            np.array([1] * len(buttons)),
+        np.array([0] * len(constraints))
+    ))
+    print(objective)
+
+
+    print(constraints)
+    print(constraints.argmin())
+
+    # There exist several solutions
+    # So should probably iterate through the various options
+    # for the pivot column, row and entry
+
+    print("HERE ARE THE CONSTRAINTS")
+    print(constraints)
+    is_feasible = all(constraints >= 0)
+    print("BFS?\t", is_feasible)
+
+
+    while (objective > 0).any():
+        pivot_col = objective.argmax()
+        print(pivot_col, objective[pivot_col])
+
+        row_coeff = objective[pivot_col] - Z
+        print(row_coeff)
+        print(tableau[:, pivot_col])
+        print(constraints)
+
+        col = tableau[:, pivot_col]
+        # Replacing the 0s with a small number
+        a = np.where(col == 0, 0.2, col)
+        print(a)
+        print(constraints / a)
+        pivot_row = (constraints/a).argmin()
+        print(pivot_row)
+        row = tableau[pivot_row]
+
+        # If column already just 1 and rest 0, we skip
+        if sum(c == 1 for c in col) > 1:
+            print("ROW MAGIC")
+            print(tableau)
+            for k, row in enumerate(tableau):
+                if k == pivot_row:
+                    continue
+                print(k, row, pivot_row, pivot_col)
+                if row[pivot_col] == 0:
+                    print("Already 0")
+                else:
+                    row -= tableau[pivot_row]
+                    constraints[k] -= constraints[pivot_row]
+            print(tableau)
+            print(constraints)
+
+        row = tableau[pivot_row]
+        print("OK")
+        print("Let's adjust the objective")
+        print(row)
+        print(objective)
+        objective -= row
+        print(objective)
+        Z -= constraints[pivot_row]
+        print(Z)
+
+
+        print(constraints)
+        print(np.array([[1, 2, 3, 4, 5, 6, -1]]))
+        print(tableau)
+        print(objective)
+        #x1 = 7
+        #x3 = 4 
+        """
+                  {0, 1, 2, 3}
+        7 * (3) = {0, 0, 0, 7}
+        4 * (2) = {0, 0, 4, 7}
+        3 * (0,1)={3, 3, 4, 7}
+        2 * (1, 3){3, 5, 4, 10}
+
+
+        """
+
+        input()
+
+
+
+    pass
+
 total_presses=0
 for line in lines:
     __, *buttons, joltage = line
@@ -134,7 +249,8 @@ for line in lines:
     print(start)
 
 
-    presses = astar(start, joltage, buttons) 
+    #presses = astar(start, joltage, buttons) 
+    presses = simplex(joltage, buttons)
     total_presses += presses
     print(presses)
 
