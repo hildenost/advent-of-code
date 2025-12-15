@@ -10,8 +10,7 @@ Each year can grant you a maximum of 50 stars, but starting from 2025, the maxim
 
 |  Year |Stars | Languages |
 |------:|---:|:------|
-| ✔️ [2025](2025) | 24⭐️ ![Progress](https://progress-bar.xyz/24/?scale=24&suffix=⭐️&show_text=false)|![python](python.svg) ![Fortran](fortran.svg)
-|
+| ✔️ [2025](2025) | 24⭐️ ![Progress](https://progress-bar.xyz/24/?scale=24&suffix=⭐️&show_text=false)|![python](python.svg) ![Fortran](fortran.svg)|
 | ✔️ [2024](2024) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)|![python](python.svg)|
 | ✔️ [2023](2023) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)|![python](python.svg)|
 | ✔️ [2022](2022) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)|![python](python.svg)|
@@ -22,4 +21,4 @@ Each year can grant you a maximum of 50 stars, but starting from 2025, the maxim
 | ✔️ [2017](2017) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)|![python](python.svg)|
 | ✔️ [2016](2016) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false) | ![python](python.svg)|
 | ✔️ [2015](2015) | 50⭐️  ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)  |![python](python.svg)|
-|**total** | 524⭐️ ![Progress](https://progress-bar.xyz/524/?scale=524&suffix=⭐️&show_text=false)|![python](python.svg)|
+|**total** | 524⭐️ ![Progress](https://progress-bar.xyz/524/?scale=524&suffix=⭐️&show_text=false)|![python](python.svg) ![fortran](fortran.svg)|
