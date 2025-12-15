@@ -10,7 +10,7 @@ Each year can grant you a maximum of 50 stars, but starting from 2025, the maxim
 
 |  Year |Stars | Languages |
 |------:|---:|:------|
-| ✔️ [2025](2025) | 24⭐️ ![Progress](https://progress-bar.xyz/24/?scale=24&suffix=⭐️&show_text=false)|![python](python.svg) ![Fortran](https://img.shields.io/badge/Fortran-%23734F96.svg?style=for-the-badge&logo=fortran&logoColor=white)
+| ✔️ [2025](2025) | 24⭐️ ![Progress](https://progress-bar.xyz/24/?scale=24&suffix=⭐️&show_text=false)|![python](python.svg) ![Fortran](fortran.svg)
 |
 | ✔️ [2024](2024) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)|![python](python.svg)|
 | ✔️ [2023](2023) | 50⭐️ ![Progress](https://progress-bar.xyz/50/?scale=50&suffix=⭐️&show_text=false)|![python](python.svg)|
