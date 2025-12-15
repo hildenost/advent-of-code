@@ -5,7 +5,7 @@ My (mostly) python solutions to [Advent of Code](https://adventofcode.com)
 [Advent of Code](https://adventofcode.com/about) is an annual advent calendar with new small programming puzzles each day. Created by Eric Wastl.
 
 ## My stars
-Each year can grant you a maximum of 50 stars. I'll try to get them all! 
+Each year can grant you a maximum of 50 stars, but starting from 2025, the maximum is 24 stars. I'll try to get them all! 
 
 
 |  Year |Stars |
